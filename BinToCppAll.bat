@@ -12,7 +12,11 @@ for /f usebackq^ tokens^=*^ delims^=^ eol^= %%f in (`dir /b /a /s "%~1"`) do (
 	if "%%~xf"==".bin" (
 		rem pushd P:\
 		CfgConvert.exe -txt -dst "%%~dpnf.cpp" "%%~f"
-		del /q "%%~f"
+		if Errorlevel 1 (
+			pause
+		) else (
+			del /q "%%~f"
+		)
 		rem popd
 	)
 )
