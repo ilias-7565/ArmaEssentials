@@ -15,7 +15,7 @@ The game checks some locations for folders with "addons" name, and load Addons f
 
 The `-mod` accept Absolute paths, and ones Relative to the `.exe` file .
 
-For example, in `Properties\Target` field of a shortcut file :
+For example, in `Properties\Target` field of a Shortcut file :
 ```
 "D:\<<1>>\Arma 3\arma3.exe" -mod=modFolder_1;folder_1\modFolder_2;D:\modFolder_3
 ```
