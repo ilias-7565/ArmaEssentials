@@ -52,4 +52,4 @@ You can share or find Mods/Missions trough :
 
 And additionally you can share/find more information about them, using :
 * [GitHub](https://github.com/) .
-* or [Xrud Wiki](https://xrud-Wiki.fandom.com/wiki/Xrud_Wiki) ;
+* or [Xrud Wiki](https://xrud.fandom.com/wiki/Category:Arma) ;
