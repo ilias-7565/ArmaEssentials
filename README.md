@@ -3,7 +3,7 @@
 
 ## Information
 
-For the info pages see the [Wiki](https://github.com/irvnriir/ArmaEssentials/wiki/) tab.
+For the info pages see the [Wiki](https://github.com/irvnriir/ArmaEssentials/wiki/) part.
 
 ## Content
 
