@@ -9,4 +9,9 @@ For the info pages see the [Wiki](https://github.com/irvnriir/ArmaEssentials/wik
 
 ## Content
 
-BinToCppAll.bat = works for all files in a folder and subfolders, or the single file, the same way as default BINToCPP.bat in CfgConvert from Dayz Tools on Steam <sup title="(put it in `DayZ Tools\Bin\CfgConvert` folder and drag the target file/folder on it)" style="color:dodgerBlue;">__[i]__</sup> ;
+BinToCppAll.bat = works for all files in a folder and subfolders, or the single file . used the same way as default BINToCPP.bat in CfgConvert from { Arma [_] | DayZ } Tools on Steam <sup title="(put it in `DayZ Tools\Bin\CfgConvert` folder and drag the target file/folder on it)" style="color:dodgerBlue;">__[i]__</sup> ;
+
+FullConfigDump_Arma3_1.99.146398_CUP_ACE.cpp (**note** -- 24 447 905 lines . VSCode will handle it) .  
+All regards to https://forums.bohemia.net/forums/topic/191737-updated-all-in-one-config-dumps/?do=findComment&comment=3408530 .
+
+It uses and fixes Arma 3 Samples from Steam, which belong to Bohemia Interactive . A lot of them are not re-sorted and doesn't have descriptions, but all should work .
