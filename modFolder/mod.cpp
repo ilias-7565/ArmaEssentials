@@ -2,30 +2,28 @@
 #define true 1
 #define false 0
 
-class CfgMods
-{
+class CfgMods {
 	// ### Arma 3
 	class Mod_Base;
-	class modName: Mod_Base
-	{
-		dir = "Curator";
-		logo = "\A3\Ui_F_Curator\Data\Logos\arma3_curator_logo_ca.paa";
-		logoOver = "\A3\Ui_F_Curator\Data\Logos\arma3_curator_logoOver_ca.paa";
-		tooltipOwned = "$STR_A3_CFGMODS_CURATOR_NAME";
-		action = "http://zeus.arma3.com";
-		name = "$STR_A3_CFGMODS_CURATOR_NAME";
+	class modName: Mod_Base {
+		//dir = "Curator";		//maybe a storage directory in Arma 3 directory folder
+		logo = "\assets_en\co_dw_256x256.paa";
+		logoOver = "\assets_en\co_dw_256x256.paa";
+		tooltipOwned = "$dev_r_en";
+		author = "@dev_r_en";
+		action = "https://github.com/ilias-7565/ArmaEssentials";
+		name = "@str_na_en $dev_r_en";
 		hideName = 1;
-		picture = "\A3\Ui_F_Curator\Data\Logos\arma3_zeus_icon_ca.paa";
+		picture = "\assets_en\co_dw_256x256.paa";
 		hidePicture = 0;
-		fieldManualTopicAndHint[] = {"Curator","Curator"};
+		fieldManualTopicAndHint[] = {};		//"Curator","Curator"
 		dlcColor[] = {0.31,0.78,0.78,1};
-		overview = "$STR_A3_DLC_CURATOR_DESCRIPTION";
-		appId = 275700;
+		overview = "$desc_en";
+		//appId = 275700;		//[d]
 	};
 	// ### Arma 2 OA
 	// defaultAction = "http://www.arma2.com/mods";
-	// class modName
-	// {
+	// class modName {
 	// 	dir = "BAF";
 	// 	name = "Arma 2: British Armed Forces (Lite)";
 	// 	hideName = 1;

@@ -5,7 +5,9 @@ Keep in mind that the presets/samples are intended to let you know about the mos
 
 ## Information
 
-For the info pages see the [Wiki](https://github.com/irvnriir/ArmaEssentials/wiki/) part.
+For the info pages see the [Wiki](https://github.com/ilias-7565/ArmaEssentials/wiki/) part.
+
+See also [CBA Repository](https://github.com/CBATeam/CBA_A3), for editing related info (for example configs).
 
 ## Content
 
@@ -14,4 +16,10 @@ BinToCppAll.bat = works for all files in a folder and subfolders, or the single 
 FullConfigDump_Arma3_1.99.146398_CUP_ACE.cpp (**note** -- 24 447 905 lines . VSCode will handle it) .  
 All regards to https://forums.bohemia.net/forums/topic/191737-updated-all-in-one-config-dumps/?do=findComment&comment=3408530 .
 
-It uses and fixes Arma 3 Samples from Steam, which belong to Bohemia Interactive . A lot of them are not re-sorted and doesn't have descriptions, but all should work .
+Arma 3 Samples from Steam -- it uses and fixes, which belong to Bohemia Interactive . A lot of them are not re-sorted and doesn't have descriptions, but all should work .
+
+Compatibility files from/for [NATO_Rus_Weapons by Massi](https://steamcommunity.com/sharedfiles/filedetails/?id=500929500) .
+
+### Additional
+
+Config enhancement/fixes for CUP . (low)
