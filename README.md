@@ -23,3 +23,9 @@ Compatibility files from/for [NATO_Rus_Weapons by Massi](https://steamcommunity.
 ### Additional
 
 Config enhancement/fixes for CUP . (low)
+​
+## Dev
+
+Mostly done r3f_log support for Zeus Enhanced 's clipboard and scripted export/save.
+	 I abandoned it {not because / with no} issues about implementation.
+https://github.com/ilias-7565/ArmaEssentials/tree/supportAn_r3f_log
