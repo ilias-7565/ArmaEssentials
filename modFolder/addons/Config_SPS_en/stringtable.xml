@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="en">
+	<Package name="Config_NATO_RUS_Massi_en">
+		<Container name="packageDescription">
+			<Key ID="str_na_en">
+				<Original>Arma Essentials</Original>
+			</Key>
+			<Key ID="t_en">
+				<Original>test</Original>
+			</Key>
+			<Key ID="dev_r_en">
+				<Original>ilias</Original>
+			</Key>
+			<Key ID="desc_en">
+				<Original></Original>
+			</Key>
+		</Container>
+		<Container name="presets">
+			<Key ID="str_yes_en">
+				<Original>yes</Original>
+				<English>yes</English>
+				<Czech>ano</Czech>
+				<French>oui</French>
+				<German>ja</German>
+				<Italian>sì</Italian>
+				<Polish>tak</Polish>
+				<Portuguese>sim</Portuguese>
+				<Russian>да</Russian>
+				<Spanish>sí</Spanish>
+				<Korean>네</Korean>
+				<Japanese>はい</Japanese>
+                <Chinesesimp>是</Chinesesimp>
+                <Chinese>是（繁體）</Chinese>
+			</Key>
+			<Key ID="str_no_en">
+				<Original>no</Original>
+			</Key>
+		</Container>
+		<Container name="t">
+			<Key ID="str_formatted_t">
+				<Original>Hello, %1.</Original>
+			</Key>
+			<Key ID="str_structuredtext_t">
+				<Original>Some text &lt;t color='%1'&gt;%2&lt;/t&gt;</Original>
+			</Key>
+		</Container>
+	</Package>
+</Project>

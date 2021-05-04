@@ -43,7 +43,7 @@ class cfgPatches {
 				// ,"CUP_AirVehicles_LoadOrder"
 				// ,"CUP_TrackedVehicles_LoadOrder"
 				// ,"CUP_WheeledVehicles_LoadOrder"
-			//,"mas_weapons"
+			// ,"mas_weapons"
 		};
 		units[] = {};
 		weapons[] = {

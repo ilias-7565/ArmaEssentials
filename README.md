@@ -18,6 +18,8 @@ All regards to https://forums.bohemia.net/forums/topic/191737-updated-all-in-one
 
 Arma 3 Samples from Steam -- it uses and fixes, which belong to Bohemia Interactive . A lot of them are not re-sorted and doesn't have descriptions, but all should work .
 
+[EDN Fortification](https://steamcommunity.com/sharedfiles/filedetails/?id=933801347&searchtext=fortif), lightly updated.
+
 Compatibility files from/for [NATO_Rus_Weapons by Massi](https://steamcommunity.com/sharedfiles/filedetails/?id=500929500) .
 
 ### Additional
