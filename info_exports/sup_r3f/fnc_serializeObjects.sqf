@@ -104,9 +104,12 @@ private _fnc_serializeUnit = {
     private _identity = [name _unit, face _unit, speaker _unit, pitch _unit, nameSound _unit, _unit call BIS_fnc_getUnitInsignia];
     private _flagTexture = getForcedFlagTexture _unit;
 
-    private _attachedObjects = _unit call _fnc_serializeAttachedObjects;
+    private _simulationEnabled = simulationEnabled _object;
 
-    [_type, _position, _direction, _group, _isLeader, _rank, _skill, _stance, _loadout, _identity, _flagTexture, _attachedObjects]
+    private _attachedObjects = _unit call _fnc_serializeAttachedObjects;
+    private _r3f_log = _object call _fnc_serializeCargo_r3f_log;
+
+    [_type, _position, _direction, _group, _isLeader, _rank, _skill, _stance, _loadout, _identity, _flagTexture, _attachedObjects, ["reservedSpaceFor_ace_cargo__", _r3f_log], _simulationEnabled]
 };
 
 private _fnc_serializeVehicle = {
@@ -167,9 +170,12 @@ private _fnc_serializeVehicle = {
         };
     };
 
-    private _attachedObjects = _vehicle call _fnc_serializeAttachedObjects;
+    private _simulationEnabled = simulationEnabled _object;
 
-    [_type, _position, _direction, _fuel, _inventory, _customization, _flagTexture, _turretMagazines, _pylonMagazines, _crew, _vehicleCargo, _slingLoadedObject, _attachedObjects]
+    private _attachedObjects = _vehicle call _fnc_serializeAttachedObjects;
+    private _r3f_log = _object call _fnc_serializeCargo_r3f_log;
+
+    [_type, _position, _direction, _fuel, _inventory, _customization, _flagTexture, _turretMagazines, _pylonMagazines, _crew, _vehicleCargo, _slingLoadedObject, _attachedObjects, ["reservedSpaceFor_ace_cargo__", _r3f_log], _simulationEnabled]
 };
 
 private _fnc_serializeStatic = {
@@ -180,10 +186,12 @@ private _fnc_serializeStatic = {
     private _direction = [vectorDir _object, vectorUp _object];
 
     private _simulationEnabled = simulationEnabled _object;
+
     private _inventory = _object call FUNC(serializeInventory);
     private _attachedObjects = _object call _fnc_serializeAttachedObjects;
+    private _r3f_log = _object call _fnc_serializeCargo_r3f_log;
 
-    [_type, _position, _direction, _simulationEnabled, _inventory, _attachedObjects]
+    [_type, _position, _direction, _simulationEnabled, _inventory, _attachedObjects, ["reservedSpaceFor_ace_cargo__", _r3f_log]]
 };
 
 private _fnc_serializeAttachedObjects = {
@@ -205,6 +213,21 @@ private _fnc_serializeAttachedObjects = {
     } forEach attachedObjects _object;
 
     _attachedObjects
+};
+
+private _fnc_serializeCargo_r3f_log = {
+    params ["_object"];
+
+    private _objects_temp = _object getVariable "r3f_log_objects_charges";
+    private _objects = [];
+
+    {
+        private _data = _x call _fnc_serializeObject;
+
+        _objects pushBack _data;
+    } forEach _objects_temp;
+
+    _objects
 };
 
 private _fnc_serializeObject = {

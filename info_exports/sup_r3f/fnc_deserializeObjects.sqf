@@ -264,6 +264,24 @@ private _fnc_deserializeAttachedObjects = {
     } forEach _attachedObjects;
 };
 
+private _fnc_deserializeCargo_r3f_log = {
+    params ["_object","_data"];
+
+	if !isNil "R3F_LOG_PUBVAR_point_attache" then {
+
+    {
+        private _data = _x call _fnc_deserializeObject;
+
+		R3F_LOG_PUBVAR_point_attache
+
+        _objects pushBack _data;
+    } forEach _data;
+
+	};
+
+    _objects
+};
+
 private _fnc_deserializeObject = {
     params ["_type"];
 
