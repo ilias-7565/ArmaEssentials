@@ -1,6 +1,8 @@
 
 # Arma/DayZ Essentials
 
+[arma essentials]
+
 Keep in mind that the presets/samples are intended to let you know about the most of options you have, large parts of it all is not required, see the info pages for descriptions of minimum requirements .
 
 ## Information
