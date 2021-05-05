@@ -9,13 +9,20 @@ Keep in mind that the presets/samples are intended to let you know about the mos
 
 For the info pages see the [Wiki](https://github.com/ilias-7565/ArmaEssentials/wiki/) part.
 
-See also [CBA Repository](https://github.com/CBATeam/CBA_A3), for editing related info (for example configs).
+See also [CBA Repository](https://github.com/CBATeam/CBA_A3), for more of editing related info (for example configs).
 
-For Mods management, Arma3Sync will allow you to separate/sort them to groups,
-	 and load multiple of these groups. The next closest solution is a Steam Workshop's Collections ("Subscribe to all"/"Unsubscribe from all" buttons).
-See [*](Additional/ArmA3Sync) .
+Userconfig folder is not required for our Addons/Mod (#d_modFolder),
+	 its only to support other Mods that require it, because they usually require to manually make/paste it.
 
-* Arma 3 Mod Preset Launcher is less functional, and even outdated.
+### Mods management
+
+Steam Workshop's Collections have "Subscribe to all"/"Unsubscribe from all" buttons. Also Steam won't delete mods for some time after Unsubscribing in it.
+
+Arma3Sync will allow you to separate/sort downloaded Mods to groups,
+	 and load multiple of these groups. See [*](Additional/ArmA3Sync) .
+
+Other:
+* Arma 3 Mod Preset Launcher is less functional than Arma3Sync, and even outdated.
 
 ## Content
 
@@ -34,9 +41,6 @@ Compatibility files from/for [NATO_Rus_Weapons by Massi](https://steamcommunity.
 
 Config enhancement/fixes for CUP . (low)
 ​
-Userconfig folder is not required for our Addons/Mod (#d_modFolder),
-	 its only to support other Mods that require it, because they usually require to manually make/paste it.
-
 ## Dev
 
 Mostly done r3f_log support for Zeus Enhanced 's clipboard and scripted export/save.
