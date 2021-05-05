@@ -7,12 +7,14 @@ Keep in mind that the presets/samples are intended to let you know about the mos
 
 ## Information
 
-For the info pages see the [Wiki](https://github.com/ilias-7565/ArmaEssentials/wiki/) part.
-
+For info pages see the [Wiki](https://github.com/ilias-7565/ArmaEssentials/wiki/) part.  
 See also [CBA Repository](https://github.com/CBATeam/CBA_A3), for more of editing related info (for example configs).
 
 Userconfig folder is not required for our Addons/Mod (#d_modFolder),
 	 its only to support other Mods that require it, because they usually require to manually make/paste it.
+
+See also our Steam Workshop's Mods management [Collections](https://steamcommunity.com/sharedfiles/filedetails/?id=2120634028).  
+Feel free to participate in improvement of the lists.
 
 ### Mods management
 
