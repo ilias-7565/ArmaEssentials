@@ -1,7 +1,7 @@
 
 ## Startup Parameters
 
-(ignore GUI items)
+Except Enable Battleye, ignore GUI items. `-beService` doesn't work for arma3_x64.exe .
 
 Main 
 * CPU: Intel, 4 cores / 8 processing Threads .
