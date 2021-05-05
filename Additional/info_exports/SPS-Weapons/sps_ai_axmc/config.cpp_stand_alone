@@ -1,0 +1,1013 @@
+////////////////////////////////////////////////////////////////////
+//DeRap: Produced from mikero's Dos Tools Dll version 5.66
+//'now' is Tue Apr 11 22:59:24 2017 : 'file' last modified on Sat Apr 01 17:06:01 2017
+//http://dev-heaven.net/projects/list_files/mikero-pbodll
+////////////////////////////////////////////////////////////////////
+
+#define _ARMA_
+#include "functions\cfgFunctions.hpp"
+
+class CfgPatches
+{
+	class SPS_weapons_ai_axmc
+	{
+		addonRootClass = "A3_Weapons_F";
+		author[] = {"SPS Team"};
+		name = "SPS-Weapons-AI-AXMC";
+		requiredAddons[] = {"A3_Weapons_F","A3_Data_F","A3_Weapons_F_Mark", "cba_jr", "cba_events", "A3_Anims_F_Config_Sdr" };
+		requiredVersion = 1.68;
+		units[] = {};
+		url = "http://specialforcesgroup.co.uk/" ;
+		version = 1.0.0;
+		versionAr[] = {1,0,0};
+		versionStr = "1.0.0";
+		weapons[] = {"SPS_AI_AXMC338_27_PB_F" , "SPS_AI_AXMC300_26_PB_F" , "SPS_AI_AXMC308_26_PB_F" , "SPS_AI_AXMC338_27_B_F" , "SPS_AI_AXMC300_26_B_F" , "SPS_AI_AXMC308_26_B_F", "SPS_AI_AXMC338_27_G_F" , "SPS_AI_AXMC300_26_G_F" , "SPS_AI_AXMC308_G_F" , "SPS_AI_AXMC338_27_DE_F" , "SPS_AI_AXMC300_26_DE_F" , "SPS_AI_AXMC308_DE_F" ,  , "SPS_AI_AXMC338_27_ES_F" , "SPS_AI_AXMC300_26_ES_F" , "SPS_AI_AXMC308_ES_F" , "muzzle_snds_SPS_AI_PB_H" , "muzzle_snds_SPS_AI_B_H", "muzzle_snds_SPS_AI_G_H", "muzzle_snds_SPS_AI_ES_H" , "muzzle_snds_SPS_AI_DE_H"};
+		magazines[] = {"SPS_AI_AXMC_762x51mm_M80A1_EPR_Mag","SPS_AI_AXMC_762x51mm_M80A1_EPR_Tracer_Mag","SPS_AI_AXMC_762x51mm_M80A1_EPR_IR_Mag", "SPS_AI_AXMC_762x51mm_M80_Mag", 
+		"SPS_AI_AXMC_762x67_Mk248_Mod_0_Mag","SPS_AI_AXMC_762x67_Mk248_Mod_1_Mag","SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_Mag", "SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_Tracer_Mag", "SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_IR_Mag",
+		"SPS_AI_AXMC_338_300gr_Scenar_Mag","SPS_AI_AXMC_338_300gr_Scenar_Tracer_Mag","SPS_AI_AXMC_338_300gr_Scenar_IR_Mag", "SPS_AI_AXMC_338_250gr_Naturalis_Mag", "SPS_AI_AXMC_338_250gr_Naturalis_Tracer_Mag", "SPS_AI_AXMC_338_250gr_Naturalis_IR_Mag", "SPS_AI_AXMC_338_Mag" 
+		,"SPS_AI_AXMC_338_300gr_Berger_Mag" ,"SPS_AI_AXMC_338_300gr_Berger_Mag_Tracer", "SPS_AI_AXMC_338_300gr_Berger_Mag_IR",
+		"SPS_AI_AXMC_762x51_Berger_JOTM_Mag", "SPS_AI_AXMC_762x51_Berger_JOTM_Mag_Tracer", "SPS_AI_AXMC_762x51_Berger_JOTM_Mag_IR"
+		};
+	};
+	class SPS_AI_AXMC_Magazines
+	{
+		units[] = {};
+		magazines[] = {"SPS_AI_AXMC_762x51mm_M80A1_EPR_Mag","SPS_AI_AXMC_762x51mm_M80A1_EPR_Tracer_Mag","SPS_AI_AXMC_762x51mm_M80A1_EPR_IR_Mag", "SPS_AI_AXMC_762x51mm_M80_Mag", 
+		"SPS_AI_AXMC_762x67_Mk248_Mod_0_Mag","SPS_AI_AXMC_762x67_Mk248_Mod_1_Mag","SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_Mag", "SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_Tracer_Mag", "SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_IR_Mag",
+		"SPS_AI_AXMC_338_300gr_Scenar_Mag","SPS_AI_AXMC_338_300gr_Scenar_Tracer_Mag","SPS_AI_AXMC_338_300gr_Scenar_IR_Mag", "SPS_AI_AXMC_338_250gr_Naturalis_Mag", "SPS_AI_AXMC_338_250gr_Naturalis_Tracer_Mag", "SPS_AI_AXMC_338_250gr_Naturalis_IR_Mag", "SPS_AI_AXMC_338_Mag"
+		,"SPS_AI_AXMC_338_300gr_Berger_Mag" ,"SPS_AI_AXMC_338_300gr_Berger_Mag_Tracer", "SPS_AI_AXMC_338_300gr_Berger_Mag_IR",
+		"SPS_AI_AXMC_762x51_Berger_JOTM_Mag", "SPS_AI_AXMC_762x51_Berger_JOTM_Mag_Tracer", "SPS_AI_AXMC_762x51_Berger_JOTM_Mag_IR"
+		};
+		requiredVersion = 0.1;
+		requiredAddons[] = {"A3_Weapons_F","A3_Weapons_F_Ammoboxes","A3_Weapons_F_beta","A3_Weapons_F_Acc"};
+		weapons[] = {};
+		ammo[] = {"B_SPS_762x67_Berger_Hybrid_OTM_Tracer_Red", "B_SPS_762x67_Berger_Hybrid_OTM_IR", "B_SPS_338_250gr_Naturalis" , "B_SPS_338_250gr_Naturalis_Tracer" , "B_SPS_338_250gr_Naturalis_IR" , "B_SPS_338_300gr_Scenar" , "B_SPS_338_300gr_Scenar_Tracer" , "B_SPS_338_300gr_Scenar_IR" , "B_SPS_762x67_Berger_Hybrid_OTM", "B_SPS_762x67_Ball_Mk248_Mod_0", "B_SPS_762x67_Ball_Mk248_Mod_1" , 
+		"B_SPS_M80A1_EPR" , "B_SPS_M80A1_EPR_Red" , "B_SPS_M80A1_EPR_IR"
+		,"B_SPS_338_300gr_Berger_OTM", "B_SPS_338_300gr_Berger_OTM_Tracer", "B_SPS_338_300gr_Berger_OTM_IR",
+		"B_SPS_762x51_185gr_Berger_JOTM", "B_SPS_762x51_185gr_Berger_JOTM_Tracer", "B_SPS_762x51_185gr_Berger_JOTM_IR"
+		};
+	};
+	
+};
+class Mode_SemiAuto;
+class SlotInfo;
+class CowsSlot;
+class MuzzleSlot;
+class PointerSlot;
+class asdg_OpticRail1913;
+class asdg_FrontSideRail;
+class asdg_MuzzleSlot;
+class asdg_MuzzleSlot_338 : asdg_MuzzleSlot
+	{
+		class compatibleItems
+		{
+			muzzle_snds_SPS_AI_PB_H = 1;
+			muzzle_snds_SPS_AI_B_H = 1;
+			muzzle_snds_SPS_AI_G_H = 1;
+			muzzle_snds_SPS_AI_ES_H = 1;
+			muzzle_snds_SPS_AI_DE_H = 1;
+		};
+	};
+class SPS;
+class CfgMovesBasic {
+    class ManActions {
+        CBA_GestureFireLRR = "CBA_GestureFireLRR";
+    };
+    class Actions {
+        class NoActions: ManActions {
+            CBA_GestureFireLRR[] = {"CBA_GestureFireLRR", "Gesture"};
+        };
+    };
+};
+
+class CfgGesturesMale {
+    class States {
+        class GestureReloadBase;
+        class CBA_GestureFireLRR: GestureReloadBase {
+            file = "a3\anims_f\data\anim\sdr\gst\gesturefirelrr.rtm";
+            speed = -1.0;			
+			mask = "SPShandsWeaponReduced";	
+            rightHandIKCurve[] = {0, 1, 0.08, 0, 0.92, 0, 1, 1};
+			enableOptics = 1;
+        };
+    };
+	class BlendAnims
+		{
+			SPShandsWeaponReduced[] = {"head",.1,"neck1",.1,"neck",.1,"LeftShoulder",1,"LeftArm",1,"LeftArmRoll",1,"LeftForeArm",1,"LeftForeArmRoll",1,"LeftHand",1,"LeftHandRing",1,"LeftHandPinky1",1,"LeftHandPinky2",1,"LeftHandPinky3",1,"LeftHandRing1",1,"LeftHandRing2",1,"LeftHandRing3",1,"LeftHandMiddle1",1,"LeftHandMiddle2",1,"LeftHandMiddle3",1,"LeftHandIndex1",1,"LeftHandIndex2",1,"LeftHandIndex3",1,"LeftHandThumb1",1,"LeftHandThumb2",1,"LeftHandThumb3",1,"RightShoulder",1,"RightArm",1,"RightArmRoll",1,"RightForeArm",1,"RightForeArmRoll",1,"RightHand",1,"RightHandRing",1,"RightHandPinky1",1,"RightHandPinky2",1,"RightHandPinky3",1,"RightHandRing1",1,"RightHandRing2",1,"RightHandRing3",1,"RightHandMiddle1",1,"RightHandMiddle2",1,"RightHandMiddle3",1,"RightHandIndex1",1,"RightHandIndex2",1,"RightHandIndex3",1,"RightHandThumb1",1,"RightHandThumb2",1,"RightHandThumb3",1,"Spine",.0175,"Spine1",.0175,"Spine2",.0175,"Spine3",0.0175};
+		};	
+};
+
+class CfgWeapons
+{
+	class Rifle;
+	class Rifle_Base_F: Rifle
+	{
+		class WeaponSlotsInfo;
+		class GunParticles;
+		class Eventhandlers; 
+	};
+	class  Rifle_Long_Base_F: Rifle_Base_F
+	{
+		class WeaponSlotsInfo
+				{
+			class MuzzleSlot;
+			class CowsSlot;
+			class PointerSlot;
+				};
+		class GunParticles;		
+	};
+
+	class DMR_02_base_F: Rifle_Long_Base_F
+	{
+		class GunParticles: GunParticles
+		{
+			class FirstEffect;
+		};
+		class WeaponSlotsInfo;
+		class Single;
+		class single_close_optics1;
+		class single_medium_optics1;
+		class single_far_optics1;
+	};	
+
+	class SPS_AI_AXMC_base_F:  DMR_02_base_F
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+            class MuzzleSlot : asdg_MuzzleSlot_338 {
+                iconPosition[] = {0.05, 0.38};
+                iconScale = 0.2;
+            };
+            class CowsSlot : asdg_OpticRail1913 {
+                iconPosition[] = {0.5, 0.3};
+                iconScale = 0.2;
+            };
+            class PointerSlot : asdg_FrontSideRail {
+                iconPosition[] = {0.35, 0.4};
+                iconScale = 0.25;
+            };
+        };
+		class EventHandlers 
+			{
+            class sps_boltaction
+				{
+				fired = "[_this select 0,_this select 1,_this select 2] call sps_fnc_boltAction";
+				};
+			};
+        class CBA_weaponEvents 
+			{
+            handAction = "CBA_GestureFireLRR";
+            sound = "";
+            soundLocation = "RightHandMiddle1";
+            onEmpty = 0;
+			};
+		recoil = "recoil_dmr_02";
+		recoilProne = "assaultRifleBase";
+		hasBipod = 1;
+		deployedPivot = "bipod";
+		drySound[] = {"A3\Sounds_F\arsenal\weapons\LongRangeRifles\M320\M320_dry",0.501187,1,20};
+		reloadMagazineSound[] = {"A3\Sounds_F\arsenal\weapons\LongRangeRifles\M320\M320_reload",1,1,10};
+		soundBipodDeploy[] = {"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_generic_deploy",0.707946,1,20};
+		soundBipodFold[] = {"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_generic_fold",0.707946,1,20};
+		modes[] = {"Single","single_close_optics1","single_medium_optics1","single_far_optics1"};
+		reloadAction = "GestureReloadLRR";
+		maxRecoilSway = 0.008;
+		swayDecaySpeed = 2;
+		allowedSlots[] = {901};
+		maxZeroing = 1800;
+		discreteDistance[] = {200,200,300,400,500,600};
+		discreteDistanceInitIndex = 0;
+		selectionFireAnim = "zasleh";
+		handAnim[] = {"OFP2_ManSkeleton", "x\SPS\Weapons\sps_ai_axmc\Data\RTM\ArmaRig_V6_1_AI_AXMC_V20.rtm"};
+		cartridgePos = "";
+		cartridgeVel = "";
+		class Single: Single
+		{
+			reloadTime = 0.8;
+			recoil = "recoil_single_dmr";
+			recoilProne = "recoil_single_prone_dmr";
+			sounds[] = {"StandardSound","SilencedSound"};
+		};
+		
+	};
+	class SPS_AI_AXMC338_27_PB_F: SPS_AI_AXMC_base_F
+	{
+		author = "SPS Team";
+		class Single: Single {dispersion = 0.0001215;};
+		class single_close_optics1: single_close_optics1 {dispersion = 0.0001215;};
+		class single_medium_optics1: single_medium_optics1 {dispersion = 0.0001215;};
+		class single_far_optics1: single_far_optics1 {dispersion = 0.0001215;};
+		magazines[] = {"SPS_AI_AXMC_338_300gr_Scenar_Mag","SPS_AI_AXMC_338_300gr_Scenar_Tracer_Mag","SPS_AI_AXMC_338_300gr_Scenar_IR_Mag", "SPS_AI_AXMC_338_250gr_Naturalis_Mag", "SPS_AI_AXMC_338_250gr_Naturalis_Tracer_Mag", "SPS_AI_AXMC_338_250gr_Naturalis_IR_Mag", "SPS_AI_AXMC_338_Mag",
+		"SPS_AI_AXMC_338_300gr_Berger_Mag" , "SPS_AI_AXMC_338_300gr_Berger_Mag_Tracer", "SPS_AI_AXMC_338_300gr_Berger_Mag_IR"};
+		scope = 2;
+		dexterity = 1.3;
+		displayName = "AI AXMC .338 27 Barrel Pale Brown";
+		descriptionShort = "Sniper Rifle <br> Caliber: .338 Lapua Magnum";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\PB\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\PB\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\PB\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\PB\Group4_low_CO.paa" ,"x\SPS\Weapons\sps_ai_axmc\Data\PB\Group4_low_CO.paa" ,"","",""};
+		inertia = 0.97;
+		initSpeed = -1.037;
+		model = "x\SPS\Weapons\sps_ai_axmc\AI_AXMC_27.p3d";
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_PB_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_PB_ca.paa";
+		class ItemInfo
+		{
+			priority = 1;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[] = {901};
+			mass = 153;
+		};
+	};
+
+	class SPS_AI_AXMC338_27_B_F: SPS_AI_AXMC338_27_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .338 27 Barrel Elite Midnight";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\B\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\B\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\B\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\B\Group4_low_CO.paa" ,"x\SPS\Weapons\sps_ai_axmc\Data\B\Group4_low_CO.paa" ,"","",""};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_B_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_B_ca.paa";		
+	};
+
+	class SPS_AI_AXMC338_27_G_F: SPS_AI_AXMC338_27_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .338 27 Barrel Green";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\G\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\G\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\G\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\G\Group4_low_CO.paa" ,"x\SPS\Weapons\sps_ai_axmc\Data\G\Group4_low_CO.paa" ,"","",""};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_G_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_G_ca.paa";		
+	};
+
+	class SPS_AI_AXMC338_27_DE_F: SPS_AI_AXMC338_27_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .338 27 Barrel Dark Earth";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\DE\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\DE\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\DE\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\DE\Group4_low_CO.paa" ,"x\SPS\Weapons\sps_ai_axmc\Data\DE\Group4_low_CO.paa" ,"","",""};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_DE_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_DE_ca.paa";		
+	};
+
+	class SPS_AI_AXMC338_27_ES_F: SPS_AI_AXMC338_27_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .338 27 Barrel Elite Sand";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\ES\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\ES\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\ES\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\ES\Group4_low_CO.paa" ,"x\SPS\Weapons\sps_ai_axmc\Data\ES\Group4_low_CO.paa" ,"","",""};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_ES_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_ES_ca.paa";		
+	};	
+	
+	class SPS_AI_AXMC300_26_PB_F: SPS_AI_AXMC_base_F
+	{
+		author = "SPS Team";
+		class Single: Single {dispersion = 0.000145444;};
+		class single_close_optics1: single_close_optics1 {dispersion = 0.000145444;};
+		class single_medium_optics1: single_medium_optics1 {dispersion = 0.000145444;};
+		class single_far_optics1: single_far_optics1 {dispersion = 0.000145444;};
+		magazines[] = {"SPS_AI_AXMC_762x67_Mk248_Mod_0_Mag","SPS_AI_AXMC_762x67_Mk248_Mod_1_Mag","SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_Mag", "SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_Tracer_Mag", "SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_IR_Mag"};
+		scope = 2;
+		dexterity = 1.33;
+		displayName = "AI AXMC .300 26 Barrel Pale Brown";
+		descriptionShort = "Sniper Rifle <br> Caliber: .300 WinMag";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\PB\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\PB\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\PB\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\PB\Group4_low_CO.paa" ,"" ,"x\SPS\Weapons\sps_ai_axmc\Data\PB\Group4_low_CO.paa","",""};
+		inertia = 0.94;
+		initSpeed = -1.033;
+		model = "x\SPS\Weapons\sps_ai_axmc\AI_AXMC_26.p3d";
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_PB_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_PB_ca.paa";
+		class ItemInfo
+		{
+			priority = 1;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[] = {901};
+			mass = 151;
+		};
+	};
+
+	class SPS_AI_AXMC300_26_B_F: SPS_AI_AXMC300_26_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .300 26 Barrel Elite Midnight";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\B\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\B\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\B\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\B\Group4_low_CO.paa" ,"" ,"x\SPS\Weapons\sps_ai_axmc\Data\B\Group4_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_B_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_B_ca.paa";
+	};
+
+	class SPS_AI_AXMC300_26_G_F: SPS_AI_AXMC300_26_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .300 26 Barrel Green";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\G\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\G\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\G\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\G\Group4_low_CO.paa" ,"" ,"x\SPS\Weapons\sps_ai_axmc\Data\G\Group4_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_G_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_G_ca.paa";
+	};
+
+	class SPS_AI_AXMC300_26_DE_F: SPS_AI_AXMC300_26_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .300 26 Barrel Dark Earth";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\DE\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\DE\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\DE\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\DE\Group4_low_CO.paa" ,"" ,"x\SPS\Weapons\sps_ai_axmc\Data\DE\Group4_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_DE_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_DE_ca.paa";
+	};
+
+	class SPS_AI_AXMC300_26_ES_F: SPS_AI_AXMC300_26_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .300 26 Barrel Elite Sand";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\ES\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\ES\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\ES\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\ES\Group4_low_CO.paa" ,"" ,"x\SPS\Weapons\sps_ai_axmc\Data\ES\Group4_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_ES_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_ES_ca.paa";
+	};	
+	
+	class SPS_AI_AXMC308_26_PB_F: SPS_AI_AXMC_base_F
+	{
+		author = "SPS Team";
+		class Single: Single {dispersion = 0.000145444;};
+		class single_close_optics1: single_close_optics1 {dispersion = 0.000145444;};
+		class single_medium_optics1: single_medium_optics1 {dispersion = 0.000145444;};
+		class single_far_optics1: single_far_optics1 {dispersion = 0.000145444;};
+		magazines[] = {"SPS_AI_AXMC_762x51mm_M80A1_EPR_Mag","SPS_AI_AXMC_762x51mm_M80A1_EPR_Tracer_Mag","SPS_AI_AXMC_762x51mm_M80A1_EPR_IR_Mag", "SPS_AI_AXMC_762x51mm_M80_Mag"
+		, "SPS_AI_AXMC_762x51_Berger_JOTM_Mag", "SPS_AI_AXMC_762x51_Berger_JOTM_Mag_Tracer", "SPS_AI_AXMC_762x51_Berger_JOTM_Mag_IR"};
+		scope = 2;
+		dexterity = 1.34;
+		displayName = "AI AXMC .308 26 Barrel Pale Brown";
+		descriptionShort = "Sniper Rifle <br> Caliber: .308 Winchester";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\PB\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\PB\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\PB\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\PB\Group4_low_CO.paa" ,"" ,"","x\SPS\Weapons\sps_ai_axmc\Data\PB\Group4_low_CO.paa","x\SPS\Weapons\sps_ai_axmc\Data\PB\Group4_low_CO.paa"};
+		inertia = 0.93;
+		initSpeed = -1.029;
+		model = "x\SPS\Weapons\sps_ai_axmc\AI_AXMC_26.p3d";
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_PB_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_PB_ca.paa";
+		class ItemInfo
+		{
+			priority = 1;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[] = {901};
+			mass = 151;
+		};
+	};
+	
+	class SPS_AI_AXMC308_26_B_F: SPS_AI_AXMC308_26_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .308 26 Barrel Elite Midnight";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\B\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\B\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\B\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\B\Group4_low_CO.paa" ,"" ,"","x\SPS\Weapons\sps_ai_axmc\Data\B\Group4_low_CO.paa","x\SPS\Weapons\sps_ai_axmc\Data\B\Group4_low_CO.paa"};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_B_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_B_ca.paa";
+	};
+	
+	class SPS_AI_AXMC308_26_G_F: SPS_AI_AXMC308_26_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .308 26 Barrel Green";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\G\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\G\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\G\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\G\Group4_low_CO.paa" ,"" ,"","x\SPS\Weapons\sps_ai_axmc\Data\G\Group4_low_CO.paa","x\SPS\Weapons\sps_ai_axmc\Data\G\Group4_low_CO.paa"};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_G_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_G_ca.paa";
+	};	
+	
+	class SPS_AI_AXMC308_26_DE_F: SPS_AI_AXMC308_26_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .308 26 Barrel Dark Earth";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\DE\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\DE\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\DE\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\DE\Group4_low_CO.paa" ,"" ,"","x\SPS\Weapons\sps_ai_axmc\Data\DE\Group4_low_CO.paa","x\SPS\Weapons\sps_ai_axmc\Data\DE\Group4_low_CO.paa"};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_DE_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_DE_ca.paa";
+	};	
+	
+	class SPS_AI_AXMC308_26_ES_F: SPS_AI_AXMC308_26_PB_F
+	{
+		author = "SPS Team";
+		displayName = "AI AXMC .308 Barrel 26 Elite Sand";
+		hiddenSelections[] = {"Barrel" , "Group2" , "Group3" , "Group4" , "Mag338" , "Mag300" , "Mag308" , "MagInsert308"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\sps_ai_axmc\Data\ES\Group1_low_CO.paa",  "x\SPS\Weapons\sps_ai_axmc\Data\ES\Group2_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\ES\Group3_low_CO.paa", "x\SPS\Weapons\sps_ai_axmc\Data\ES\Group4_low_CO.paa" ,"" ,"","x\SPS\Weapons\sps_ai_axmc\Data\ES\Group4_low_CO.paa","x\SPS\Weapons\sps_ai_axmc\Data\ES\Group4_low_CO.paa"};
+		picture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_ES_ca.paa";
+		UIpicture = "x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_ES_ca.paa";
+	};	
+	
+	class ItemCore;
+	class InventoryItem_Base_F;
+	class InventoryMuzzleItem_Base_F;
+	class InventoryFlashLightItem_Base_F;
+	class muzzle_snds_338_black;
+	class Zasleh2: ItemCore
+	{
+		scope = 2;
+		model = "A3\weapons_f\data\zaslehsdl_proxy.p3d";
+	};
+	class muzzle_snds_H: ItemCore
+	{
+			class ItemInfo;			
+	};
+	class muzzle_snds_SPS_AI_PB_H:muzzle_snds_338_black
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = "AI Suppressor Pale Brown";
+		Picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\Suppressor_PB.paa";
+		UiPicture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\Suppressor_PB.paa";
+		model = "x\SPS\Weapons\sps_ai_axmc\Suppressor_PB.p3d";		
+	};
+
+	class muzzle_snds_SPS_AI_B_H : muzzle_snds_SPS_AI_PB_H
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = "AI Suppressor Black";
+		Picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\Suppressor_B.paa";
+		UiPicture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\Suppressor_B.paa";
+		model = "x\SPS\Weapons\sps_ai_axmc\Suppressor_B.p3d";		
+	};
+
+	class muzzle_snds_SPS_AI_ES_H:muzzle_snds_338_black
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = "AI Suppressor Elite Sand";
+		Picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\Suppressor_ES.paa";
+		UiPicture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\Suppressor_ES.paa";
+		model = "x\SPS\Weapons\sps_ai_axmc\Suppressor_ES.p3d";		
+	};
+
+	class muzzle_snds_SPS_AI_G_H:muzzle_snds_338_black
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = "AI Suppressor Green";
+		Picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\Suppressor_G.paa";
+		UiPicture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\Suppressor_G.paa";
+		model = "x\SPS\Weapons\sps_ai_axmc\Suppressor_G.p3d";		
+	};	
+
+	class muzzle_snds_SPS_AI_DE_H:muzzle_snds_338_black
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = "AI Suppressor Dark Earth";
+		Picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\Suppressor_DE.paa";
+		UiPicture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\Suppressor_DE.paa";
+		model = "x\SPS\Weapons\sps_ai_axmc\Suppressor_DE.p3d";		
+	};	
+	
+};
+
+
+
+class CfgAmmo
+{
+	class BulletBase;
+	class B_762x51_Ball; //ACE_762x67_Ball_Berger_Hybrid_OTM;
+	class B_338_Ball;
+//	class ACE_338_Ball;
+	class B_SPS_762x67_Ball_Mk248_Mod_0 : B_762x51_Ball
+	{
+		airFriction = -0.0007053;
+		caliber = 1.8;
+		hit = 17;
+		typicalSpeed = 900;
+	};
+	class B_SPS_762x67_Ball_Mk248_Mod_1 :B_762x51_Ball
+	{
+		airFriction = -0.00061188;
+		caliber = 1.9;
+		hit = 18;
+		typicalSpeed = 867;
+	};
+	class B_SPS_762x67_Berger_Hybrid_OTM: B_762x51_Ball//ACE_762x67_Ball_Berger_Hybrid_OTM
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 0;
+		tracerScale = 1.2; //0.6;
+        tracerStartTime=0.073;  
+        tracerEndTime=3.2;  
+		airFriction = -0.00053733;
+		caliber = 2;
+		hit = 19;
+		typicalSpeed = 853;
+//		ACE_muzzleVelocityVariationSD=0.23;
+	};
+	class B_SPS_762x67_Berger_Hybrid_OTM_Tracer_Red: B_SPS_762x67_Berger_Hybrid_OTM //ACE_762x67_Ball_Berger_Hybrid_OTM
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 0;
+		tracerScale = 1.2; //0.6;
+        tracerStartTime=0.073;  
+        tracerEndTime=3.2;  
+	};
+	class B_SPS_762x67_Berger_Hybrid_OTM_IR: B_SPS_762x67_Berger_Hybrid_OTM //B_SPS_762x67_Berger_Hybrid_OTM_Tracer_Red
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 1;
+	};
+	class B_SPS_338_250gr_Naturalis: B_338_Ball
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		hit = 23;
+		caliber = 0.85;
+/*		ACE_muzzleVelocityVariationSD=0.2;
+		ACE_caliber = 8.585;
+		ACE_bulletLength = 39.573;
+		ACE_bulletMass = 16.2;
+		ACE_ammoTempMuzzleVelocityShifts[] = {-26.55,-25.47,-22.85,-20.12,-16.98,-12.8,-7.64,-1.53,5.96,15.17,26.19};
+		ACE_ballisticCoefficients[] = {0.322};
+		ACE_velocityBoundaries[] = {};
+		ACE_standardAtmosphere = "ICAO";
+		ACE_dragModel = 7;
+		ACE_muzzleVelocities[] = {900,935,945};
+		ACE_barrelLengths[] = {508,660.4,711.2};
+*/
+	};
+	class B_SPS_338_250gr_Naturalis_Tracer: B_SPS_338_250gr_Naturalis
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 0;
+		tracerScale = 1.4; 
+        tracerStartTime=0.073;  
+        tracerEndTime=3.6; 
+	};
+	class B_SPS_338_250gr_Naturalis_IR: B_SPS_338_250gr_Naturalis
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 1;
+		tracerScale = 1.4; 
+        tracerStartTime=0.073;  
+        tracerEndTime=3.6; 
+	};
+	class B_SPS_338_300gr_Scenar: B_338_Ball //ACE_338_Ball
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+        timeToLive=10;
+        airFriction=-0.00055706;
+        typicalSpeed=826;
+		caliber = 2;
+/*        ACE_caliber=8.585;
+        ACE_bulletLength=44.0182;
+        ACE_bulletMass=19.44;
+        ACE_muzzleVelocityVariationSD=0.15;
+        ACE_ammoTempMuzzleVelocityShifts[]={-26.55, -25.47, -22.85, -20.12, -16.98, -12.80, -7.64, -1.53, 5.96, 15.17, 26.19};
+        ACE_ballisticCoefficients[]={0.368};
+        ACE_velocityBoundaries[]={};
+        ACE_standardAtmosphere="ICAO";
+        ACE_dragModel=7;		
+		ACE_muzzleVelocities[] = {831,851,857,861};
+		ACE_barrelLengths[] = {508,609.6,673.1,711.2};
+*/
+		hit = 24.5;
+	};
+	class B_SPS_338_300gr_Scenar_Tracer: B_SPS_338_300gr_Scenar
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 0;
+		tracerScale = 1.4; 
+        tracerStartTime=0.073;  
+        tracerEndTime=3.6; 	
+        timeToLive=10;
+	};
+	class B_SPS_338_300gr_Scenar_IR: B_SPS_338_300gr_Scenar
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 1;
+		tracerScale = 1.4; 
+        tracerStartTime=0.073;  
+        tracerEndTime=3.6; 	
+        timeToLive=10;
+	};
+	class B_SPS_M80A1_EPR: B_762x51_Ball
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		airFriction = -0.00103;
+		caliber = 1.53;
+		deflecting = 21;
+		hit = 15.74;
+		typicalSpeed = 840;
+		tracerScale = 1.2; //0.6;
+        tracerStartTime=0.073;  
+        tracerEndTime=2.15957;  
+	};
+	class B_SPS_M80A1_EPR_Red: B_SPS_M80A1_EPR
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 0;
+		tracerScale = 1.2; 
+        tracerStartTime=0.073;  
+        tracerEndTime=3.2;  
+	};
+	class B_SPS_M80A1_EPR_IR: B_SPS_M80A1_EPR
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 1;
+		tracerScale = 1.2;
+        tracerStartTime=0.073;  
+        tracerEndTime=3.2;  
+	};	
+
+	class B_SPS_338_300gr_Berger_OTM: B_SPS_338_300gr_Scenar
+	{
+       scope = 2;
+	   model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+	   airFriction=-0.000545;
+//	   ACE_ballisticCoefficients[]={0.421};
+	};
+
+	class B_SPS_338_300gr_Berger_OTM_Tracer: B_SPS_338_300gr_Berger_OTM
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 0;
+		tracerScale = 1.4; 
+        tracerStartTime=0.073;  
+        tracerEndTime=3.6; 	
+        timeToLive=10;		
+	};
+
+	class B_SPS_338_300gr_Berger_OTM_IR: B_SPS_338_300gr_Berger_OTM_Tracer
+	{
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 1;
+		tracerScale = 1.4; 
+        tracerStartTime=0.073;  
+        tracerEndTime=3.6; 	
+        timeToLive=10;		
+	};
+
+	class B_SPS_762x51_185gr_Berger_JOTM: B_762x51_Ball
+	{
+       scope = 2;
+	   model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+	   airFriction=-0.000725;
+	   caliber = 1.8;
+	   hit = 16;
+	   timeToLive = 6;
+	   tracerEndTime = 2.15957;
+	   typicalSpeed = 790;
+//	   ACE_dragModel=7;
+//	   ACE_bulletMass=11.9878;
+//	   ACE_ballisticCoefficients[]={0.283};		
+//	   ACE_muzzleVelocityVariationSD = 0.25;
+//	   ACE_muzzleVelocities[]={776.4, 791.4, 806.4, 815.4, 820.4};
+ //      ACE_barrelLengths[]={406.4, 508.0, 609.6, 660.4, 700};	
+//	   ACE_standardAtmosphere="ICAO";
+	};
+	class B_SPS_762x51_185gr_Berger_JOTM_Tracer: B_SPS_762x51_185gr_Berger_JOTM
+	{
+		tracerScale = 1.2; 
+        tracerStartTime=0.073;  
+        tracerEndTime=2.5; 
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 0;
+	};
+	class B_SPS_762x51_185gr_Berger_JOTM_IR: B_SPS_762x51_185gr_Berger_JOTM
+	{
+		tracerScale = 1.2; 
+        tracerStartTime=0.073;  
+        tracerEndTime=2.5; 
+		scope = 2;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		nvgOnly = 1;	
+	};
+
+};
+
+class CfgMagazines
+{
+	class Default;
+	class CA_Magazine;
+	class 20Rnd_762x51_Mag;
+	class 10Rnd_338_Mag;
+	
+	class SPS_AI_AXMC_762x51mm_M80A1_EPR_Mag: 20Rnd_762x51_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		count = 10;
+		mass = 7;
+		displaynameshort = "M80A1";
+		ammo = "B_SPS_M80A1_EPR";
+		initSpeed = 929;
+		tracersEvery = 0;
+		lastRoundsTracer = 3;
+		descriptionShort = "Caliber: 7.62x51 mm NATO <br>Rounds: 10<br>Used in: AI AXMC 308";
+		displayname = "7.62mm 10Rnd Mag (M80A1 EPR)";
+	};
+	class SPS_AI_AXMC_762x51mm_M80A1_EPR_Tracer_Mag: SPS_AI_AXMC_762x51mm_M80A1_EPR_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		count = 10;
+		mass = 7;
+		tracersEvery = 1;
+		ammo = "B_SPS_M80A1_EPR_Red";
+		descriptionShort = "Caliber: 7.62x51 mm NATO <br>Rounds: 10<br>Used in: AI AXMC 308";
+		displayname = "7.62mm 10Rnd Tracer Mag (M80A1 EPR)";
+		displaynameshort = "M80A1T";
+	};	
+	class SPS_AI_AXMC_762x51mm_M80A1_EPR_IR_Mag: SPS_AI_AXMC_762x51mm_M80A1_EPR_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		count = 10;
+		mass = 7;
+		tracersEvery = 1;
+		ammo = "B_SPS_M80A1_EPR_IR";
+		descriptionShort = "Caliber: 7.62x51 mm NATO <br>Rounds: 10<br>Used in: AI AXMC 308";
+		displayname = "7.62mm 10Rnd IR DIM Mag (M80A1 EPR)";
+		displaynameshort = "M80A1 IR";
+	};		
+	class SPS_AI_AXMC_762x51mm_M80_Mag: 20Rnd_762x51_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		count = 10;
+		mass = 7;
+		descriptionShort = "Caliber: 7.62x51 mm NATO <br>Rounds: 10<br>Used in: AI AXMC 308";
+		displayname = "7.62mm 10Rnd Mag (M80)";
+	};	
+/*	class SPS_AI_AXMC_762x51_M993_AP_Mag: ACE_10Rnd_762x51_M993_AP_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		mass = 7;
+	};
+	class SPS_AI_AXMC_762x51_Mk319_Mod_0_Mag: ACE_10Rnd_762x51_Mk319_Mod_0_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		mass = 7;		
+	};
+	class SPS_AI_AXMC_762x51_Mk316_Mod_0_Mag: ACE_10Rnd_762x51_Mk316_Mod_0_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		mass = 7;		
+	};
+	class SPS_AI_AXMC_762x51_M118LR_Mag: ACE_10Rnd_762x51_M118LR_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		mass = 7;		
+	};
+*/
+	class SPS_AI_AXMC_762x67_Mk248_Mod_0_Mag: 20Rnd_762x51_Mag //ACE_20Rnd_762x67_Mk248_Mod_0_Mag
+	{
+		author = "SPS Team";
+		displayName = ".300WM 10Rnd Mag (Mk248 Mod 0)";
+		displayNameShort = ".300 Mk248M0";
+		descriptionShort = "Caliber: 7.62x67mm NATO (Mk248 Mod 0)<br>Rounds: 10";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_Mag_ca.paa";
+		count = 10;
+		mass = 10.5;
+		initSpeed = 897;
+		ammo = "B_SPS_762x67_Ball_Mk248_Mod_0";
+	};
+	class SPS_AI_AXMC_762x67_Mk248_Mod_1_Mag: 20Rnd_762x51_Mag //ACE_20Rnd_762x67_Mk248_Mod_1_Mag
+	{
+		author = "SPS Team";
+		displayName = ".300WM 10Rnd Mag (Mk248 Mod 1)";
+		displayNameShort = ".300 Mk248M1";
+		descriptionShort = "Caliber: 7.62x67mm NATO (Mk248 Mod 1)<br>Rounds: 10";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_Mag_ca.paa";
+		count = 10;
+		mass = 10.5;
+		initSpeed = 851;
+		ammo = "B_SPS_762x67_Ball_Mk248_Mod_1";		
+	};
+	class SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_Mag: 20Rnd_762x51_Mag //ACE_20Rnd_762x67_Berger_Hybrid_OTM_Mag
+	{
+		author = "SPS Team";
+		displayName = ".300WM 10Rnd Mag (Berger Hybrid OTM)";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_Mag_ca.paa";
+		displayNameShort = ".300 BH OTM";
+		count = 10;
+		ammo = "B_SPS_762x67_Berger_Hybrid_OTM";
+		mass = 10.5;	
+		initSpeed = 858;
+		descriptionShort = "Caliber: 7.62x67mm NATO (Berger Hybrid OTM)<br>Rounds: 10";
+	};
+	class SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_Tracer_Mag: SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_Mag
+	{
+		author = "SPS Team";
+		displayName = ".300WM 10Rnd Mag Tracer (Berger Hybrid OTM)";
+		displayNameShort = ".300 BH OTM T";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_Mag_ca.paa";
+		count = 10;
+		mass = 10.5;
+		tracersEvery = 1;
+		ammo = "B_SPS_762x67_Berger_Hybrid_OTM_Tracer_Red";
+	};
+	class SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_IR_Mag: SPS_AI_AXMC_762x67_Berger_Hybrid_OTM_Mag
+	{
+		author = "SPS Team";
+		displayName = ".300WM 10Rnd Mag IR DIM (Berger Hybrid OTM)";
+		displayNameShort = ".300 BH OTM IR";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_300_Mag_ca.paa";
+		count = 10;
+		mass = 10.5;
+		tracersEvery = 1;
+		ammo = "B_SPS_762x67_Berger_Hybrid_OTM_IR";
+	};
+	class SPS_AI_AXMC_338_Mag: 10Rnd_338_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = ".338 LM 10Rnd Mag";
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_Mag_ca.paa";
+		count = 10;
+		ammo = "B_338_Ball";
+		initSpeed = 915;
+		descriptionShort = "Caliber: .338 Lapua Magnum<br>Rounds: 10<br>Used in: AI AXMC .338";
+		mass = 14;		
+	};
+/*	class SPS_AI_AXMC_338_API526_Mag: ACE_10Rnd_338_API526_Mag
+	{
+		author = "SPS Team";
+		scope = 2;	
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_Mag_ca.paa";
+	};
+	class SPS_AI_AXMC_338_300gr_HPBT_Mag: ACE_10Rnd_338_300gr_HPBT_Mag
+	{
+		author = "SPS Team";
+		scope = 2;	
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_Mag_ca.paa";	
+		displayName = ".338 10Rnd Mag (300gr Sierra MatchKing HPBT)";
+		displayNameShort = ".338 HPBT";
+		descriptionShort = "Caliber: 8.6x70mm (300gr Sierra MatchKing HPBT)<br>Rounds: 10";	
+	};
+*/
+	class SPS_AI_AXMC_338_300gr_Scenar_Mag: 10Rnd_338_Mag //SPS_AI_AXMC_338_300gr_HPBT_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = ".338 LM 300gr Scenar 10Rnd Mag";
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_Mag_ca.paa";
+		count = 10;
+		ammo = "B_SPS_338_300gr_Scenar";
+		initSpeed = 834;
+		descriptionShort = "Caliber: .338 Lapua Magnum<br>Rounds: 10<br>Used in: AI AXMC .338";
+		displayNameShort = ".338 Scenar";
+		mass = 14;			
+	};
+	class SPS_AI_AXMC_338_300gr_Scenar_Tracer_Mag: SPS_AI_AXMC_338_300gr_Scenar_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = ".338 LM 300gr Scenar Tracer 10Rnd Mag";	
+		ammo = "B_SPS_338_300gr_Scenar_Tracer";	
+		displayNameShort = ".338 Scenar T";		
+		tracersEvery = 1;
+	};
+	class SPS_AI_AXMC_338_300gr_Scenar_IR_Mag: SPS_AI_AXMC_338_300gr_Scenar_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = ".338 LM 300gr Scenar IR DIM 10Rnd Mag";	
+		ammo = "B_SPS_338_300gr_Scenar_IR";	
+		displayNameShort = ".338 Scenar IR";
+		tracersEvery = 1;
+	};
+	class SPS_AI_AXMC_338_250gr_Naturalis_Mag :SPS_AI_AXMC_338_300gr_Scenar_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = ".338 LM 250gr Naturalis 10Rnd Mag";
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_Mag_ca.paa";
+		count = 10;
+		ammo = "B_SPS_338_250gr_Naturalis";
+		initSpeed = 914;
+		descriptionShort = "Caliber: .338 Lapua Magnum<br>Rounds: 10<br>Used in: AI AXMC .338";
+		displayNameShort = ".338 Naturalis";
+		mass = 14;			
+	};
+	class SPS_AI_AXMC_338_250gr_Naturalis_Tracer_Mag: SPS_AI_AXMC_338_250gr_Naturalis_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = ".338 LM 250gr Naturalis Tracer 10Rnd Mag";	
+		ammo = "B_SPS_338_250gr_Naturalis_Tracer";	
+		tracersEvery = 1;
+		displayNameShort = ".338 Naturalis T";
+	};
+	class SPS_AI_AXMC_338_250gr_Naturalis_IR_Mag: SPS_AI_AXMC_338_250gr_Naturalis_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = ".338 LM 250gr Naturalis IR DIM 10Rnd Mag";	
+		ammo = "B_SPS_338_250gr_Naturalis_IR";	
+		tracersEvery = 1;
+		displayNameShort = ".338 Naturalis IR";
+	};	
+	class SPS_AI_AXMC_338_300gr_Berger_Mag:SPS_AI_AXMC_338_300gr_Scenar_Mag
+	{
+		ammo = "B_SPS_338_300gr_Berger_OTM";
+		author = "SPS Team";
+		scope = 2;
+		displayName = ".338 LM 300gr BergerOTM 10Rnd Mag";
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_338_Mag_ca.paa";
+		count = 10;
+		initSpeed = 837;
+		descriptionShort = "Caliber: .338 Lapua Magnum<br>Rounds: 10<br>Used in: AI AXMC .338";
+		displayNameShort = ".338 Berger";
+		mass = 14;	
+	};
+	class SPS_AI_AXMC_338_300gr_Berger_Mag_Tracer: SPS_AI_AXMC_338_300gr_Berger_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = ".338 LM 300gr BergerOTM Tracer 10Rnd Mag";	
+		ammo = "B_SPS_338_300gr_Berger_OTM_Tracer";	
+		displayNameShort = ".338 Berger T";		
+		tracersEvery = 1;		
+	};
+	class SPS_AI_AXMC_338_300gr_Berger_Mag_IR: SPS_AI_AXMC_338_300gr_Berger_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		displayName = ".338 LM 300gr BergerOTM IR DIM 10Rnd Mag";	
+		ammo = "B_SPS_338_300gr_Berger_OTM_IR";	
+		displayNameShort = ".338 Berger IR";		
+		tracersEvery = 1;		
+	};	
+	class SPS_AI_AXMC_762x51_Berger_JOTM_Mag: SPS_AI_AXMC_762x51mm_M80A1_EPR_Mag
+	{
+		author = "SPS Team";
+		count = 10;
+		initSpeed = 790;
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		mass = 7;
+		ammo = "B_SPS_762x51_185gr_Berger_JOTM";
+		displayName = "7.62mm 10Rnd Mag (Berger JOTM)";
+		descriptionShort = "Caliber: 7.62x51mm NATO (Berger JOTM)<br />Rounds: 10";
+		displayNameShort = "7.62mm Berger";
+	};
+	class SPS_AI_AXMC_762x51_Berger_JOTM_Mag_Tracer: SPS_AI_AXMC_762x51_Berger_JOTM_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		mass = 7;
+		ammo = "B_SPS_762x51_185gr_Berger_JOTM_Tracer";
+		displayName = "7.62mm 10Rnd Mag (Berger JOTM) Tracer";
+		descriptionShort = "Caliber: 7.62x51mm NATO Tracer (Berger JOTM)<br />Rounds: 10";
+		displayNameShort = "7.62mm Berger T";	
+		tracersEvery = 1;
+	};
+	class SPS_AI_AXMC_762x51_Berger_JOTM_Mag_IR: SPS_AI_AXMC_762x51_Berger_JOTM_Mag
+	{
+		author = "SPS Team";
+		scope = 2;
+		picture = "\x\SPS\Weapons\sps_ai_axmc\Data\UI\AI_AXMC_308_Mag_ca.paa";
+		mass = 7;
+		ammo = "B_SPS_762x51_185gr_Berger_JOTM_IR";
+		displayName = "7.62mm 10Rnd Mag (Berger JOTM) IR DIM";
+		descriptionShort = "Caliber: 7.62x51mm NATO IR DIM (Berger JOTM)<br />Rounds: 10";
+		displayNameShort = "7.62mm Berger IR";	
+		tracersEvery = 1;		
+	};		
+	
+	
+};
+//};

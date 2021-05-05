@@ -1,0 +1,784 @@
+////////////////////////////////////////////////////////////////////
+//DeRap: Produced from mikero's Dos Tools Dll version 5.66
+//'now' is Tue Apr 11 22:59:24 2017 : 'file' last modified on Sat Apr 01 17:06:01 2017
+//http://dev-heaven.net/projects/list_files/mikero-pbodll
+////////////////////////////////////////////////////////////////////
+
+#define _ARMA_
+
+//Class SPS_hk416 : config.bin{
+class CfgPatches
+{
+	class SPS_weapons_hk416
+	{
+		addonRootClass = "A3_Weapons_F";
+		author = "SPS Team";
+		authors[] = {"SPS Team"};
+		name = "SPS-Weapons-HK416";
+		requiredAddons[] = {"A3_Weapons_F","A3_Data_F","SPS_Weapons"};
+		requiredVersion = 1.68;
+		units[] = {};
+		url = "http://www.161strr.eu/" ;
+		version = 1.0.0;
+		versionAr[] = {1,0,0};
+		versionStr = "1.0.0";
+		weapons[] = {"SPS_hk416_14_5_afg_ral8000_F","SPS_hk416_14_5_afg_black_F","SPS_hk416_14_5_afg_fde_F","SPS_hk416_16_5_afg_ral8000_F","SPS_hk416_16_5_afg_black_F","SPS_hk416_16_5_afg_fde_F","SPS_hk416_16_5_afg_sf_black_f","SPS_hk416_11_afg_ral8000_F","SPS_hk416_11_afg_black_F","SPS_hk416_11_afg_fde_F","SPS_hk416_14_5_vfg_ral8000_F","SPS_hk416_14_5_vfg_black_F","SPS_hk416_14_5_vfg_fde_F","SPS_hk416_16_5_vfg_ral8000_F","SPS_hk416_16_5_vfg_black_F","SPS_hk416_16_5_vfg_fde_F","SPS_hk416_16_5_vfg_sf_ral8000_F","SPS_hk416_16_5_vfg_sf_black_F","SPS_hk416_16_5_vfg_sf_fde_F","SPS_hk416_11_vfg_ral8000_F","SPS_hk416_11_vfg_black_F","SPS_hk416_11_vfg_fde_F","SPS_hk416_20_afg_ral8000_F","SPS_hk416_20_afg_black_F","SPS_hk416_20_afg_fde_F","SPS_hk416_20_vfg_ral8000_F","SPS_hk416_20_vfg_black_F","SPS_hk416_20_vfg_fde_F","SPS_hk416_16_5_afg_sf_ral8000_f","SPS_hk416_16_5_afg_sf_fde_f" 
+					, "SPS_hk416_11_glm_black_f" , "SPS_hk416_11_glm_FDE_f" , "SPS_hk416_11_glm_RAL8000_f", "SPS_hk416_14_5_glm_black_f" , "SPS_hk416_14_5_glm_FDE_f" , "SPS_hk416_14_5_glm_RAL8000_f" , "SPS_hk416_16_5_glm_black_f" , "SPS_hk416_16_5_glm_FDE_f" , "SPS_hk416_16_5_glm_RAL8000_f"};
+		magazines[] = {"SPS_60Rnd_556x45_Surefire_mag", "SPS_60Rnd_556x45_Surefire_Tracer_Red_mag"};
+	};
+};
+
+class Mode_SemiAuto;
+class Mode_FullAuto;
+class SlotInfo;
+class CowsSlot;
+class MuzzleSlot;
+class PointerSlot;
+class asdg_OpticRail1913;
+class asdg_FrontSideRail;
+class asdg_MuzzleSlot_556;
+class asdg_UnderSlot;
+class SPS;
+class CfgWeapons
+{
+	class Rifle;
+	class UGL_F;
+	class Rifle_Base_F: Rifle
+	{
+		class WeaponSlotsInfo;
+		class GunParticles;
+	};
+	class arifle_SPAR_01_base_F: Rifle_Base_F
+	{
+		class GunParticles: GunParticles
+		{
+			class SecondEffect;
+		};
+		class WeaponSlotsInfo;
+		class Single;
+		class FullAuto;
+		class fullauto_medium;
+		class single_medium_optics1;
+		class single_medium_optics2;
+	};
+	class SPS_hk416_base_f: arifle_SPAR_01_base_F
+	{
+		magazines[] = {"30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_green","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_Tracer_Red","30Rnd_556x45_Stanag_Tracer_Green","30Rnd_556x45_Stanag_Tracer_Yellow"};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+            class MuzzleSlot : asdg_MuzzleSlot_556 {
+                iconPosition[] = {0.05, 0.38};
+                iconScale = 0.2;
+            };
+            class CowsSlot : asdg_OpticRail1913 {
+                iconPosition[] = {0.5, 0.3};
+                iconScale = 0.2;
+            };
+            class PointerSlot : asdg_FrontSideRail {
+                iconPosition[] = {0.35, 0.4};
+                iconScale = 0.25;
+            };
+            class UnderBarrelSlot : asdg_UnderSlot {
+                iconPosition[] = {0.3, 0.65};
+                iconScale = 0.2;
+            };
+        };
+//		initSpeed = 920;
+		ACE_clearJamAction = "GestureReloadSPAR_01";
+		ACE_checkTemperatureAction = "Gear";
+		ACE_overheating_mrbs = 10000;
+		ACE_Overheating_Dispersion[] = {0,0.0008,0.0012,0.0024};
+		ACE_Overheating_SlowdownFactor[] = {1,1,1,0.9};
+		ACE_Overheating_JamChance[] = {0,0.00015,0.00075,0.00375};
+		modes[] = {"Single","FullAuto","single_medium_optics1","single_medium_optics2","fullauto_medium"};
+		reloadAction = "GestureReloadSPAR_01";
+		recoil = "recoil_spar";
+		maxZeroing = 1000;
+		discreteDistance[] = {100,200,300,400};
+		discreteDistanceInitIndex = 0;
+		maxRecoilSway = 0.01;
+		swayDecaySpeed = 2;
+		allowedSlots[] = {901};
+		selectionFireAnim = "zasleh";
+		class Single: Single
+		{
+			reloadTime = 0.075;
+		};
+		class FullAuto: FullAuto
+		{
+			reloadTime = 0.075;
+		};
+		class sps_glm: UGL_F
+		{
+			displayName = "HK GLM";
+			descriptionShort = "40mm Grenade Launcher Module";
+			useModelOptics = 0;
+			useExternalOptic = 0;
+//			magazines[] = {"1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F","UGL_FlareYellow_F","UGL_FlareCIR_F","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell","1Rnd_SmokePurple_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","3Rnd_HE_Grenade_shell","3Rnd_UGL_FlareWhite_F","3Rnd_UGL_FlareGreen_F","3Rnd_UGL_FlareRed_F","3Rnd_UGL_FlareYellow_F","3Rnd_UGL_FlareCIR_F","3Rnd_Smoke_Grenade_shell","3Rnd_SmokeRed_Grenade_shell","3Rnd_SmokeGreen_Grenade_shell","3Rnd_SmokeYellow_Grenade_shell","3Rnd_SmokePurple_Grenade_shell","3Rnd_SmokeBlue_Grenade_shell","3Rnd_SmokeOrange_Grenade_shell"};
+			cameraDir = "OP_look";
+			discreteDistance[] = {50,75,100,150,200,250,300,350};
+			discreteDistanceCameraPoint[] = {"OP_eye_50","OP_eye_75","OP_eye_100","OP_eye_150","OP_eye_200","OP_eye_250","OP_eye_300","OP_eye_350"};
+			discreteDistanceInitIndex = 2;
+			reloadAction = "GestureReloadSPARUGL";
+			reloadMagazineSound[] = {"A3\Sounds_F_Exp\arsenal\weapons\Rifles\SPAR01\SPAR01_UGL_reload",1,1,10};
+		};
+	};
+	class SPS_hk416_11_vfg_black_f: SPS_hk416_base_f
+	{
+		author = "SPS Team";
+		class Single: Single {dispersion = 0.00068;};
+		class FullAuto: FullAuto {dispersion = 0.00068;};
+		class fullauto_medium: fullauto_medium {dispersion = 0.00068;};
+		class single_medium_optics1:  single_medium_optics1 {dispersion = 0.00068;};
+		class single_medium_optics2:  single_medium_optics2 {dispersion = 0.00068;};
+		ACE_barrelLength = 279.4;
+		ACE_barrelTwist = 177.8;
+		dexterity = 1.7;
+//		dispersion = 0.00068;
+		displayName = "HK416A5 11 Barrel (VFG) Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_VFG2.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_11_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\VerticalGrip_low_CO.paa",""};
+		inertia = 0.35;
+		initSpeed = -0.891;
+		model = "x\SPS\Weapons\SPS_hk416\HK416_11.p3d";
+		picture = "x\SPS\Weapons\SPS_hk416\ui\11VFG_black_ca.paa";
+		scope = 2;
+		maxZeroing = 800;
+		uiPicture = "x\SPS\Weapons\SPS_hk416\ui\11VFG_black_ca.paa";
+		class ItemInfo
+		{
+			priority = 1;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[] = {901};
+			mass = 73;
+		};
+	};
+	class SPS_hk416_11_vfg_ral8000_f: SPS_hk416_11_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 11 Barrel (VFG) RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_11_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\VerticalGrip_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\11VFG_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\11VFG_ral8000_ca.paa";
+	};
+	class SPS_hk416_11_vfg_fde_f: SPS_hk416_11_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 11 Barrel (VFG) Dark Earth";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_11_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\VerticalGrip_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\11VFG_fde_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\11VFG_fde_ca.paa";
+	};
+	class SPS_hk416_11_afg_black_f: SPS_hk416_11_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 11 Barrel (AFG) Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_AFG2.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\Black\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_11_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\11AFG_black_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\11AFG_black_ca.paa";
+	};
+	class SPS_hk416_11_afg_ral8000_f: SPS_hk416_11_afg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 11 Barrel (AFG) RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\RAL8000\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_11_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\11AFG_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\11AFG_ral8000_ca.paa";
+	};
+	class SPS_hk416_11_afg_fde_f: SPS_hk416_11_afg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 11 Barrel (AFG) Dark Earth";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\RAL8000\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_11_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\11AFG_fde_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\11AFG_fde_ca.paa";
+	};
+	class SPS_hk416_14_5_vfg_black_f: SPS_hk416_base_f
+	{
+		author = "SPS Team";
+		class Single: Single {dispersion = 0.000644985;};
+		class FullAuto: FullAuto {dispersion = 0.000644985;};
+		class fullauto_medium: fullauto_medium {dispersion = 0.000644985;};
+		class single_medium_optics1:  single_medium_optics1 {dispersion = 0.000644985;};
+		class single_medium_optics2:  single_medium_optics2 {dispersion = 0.000644985;};
+		scope = 2;
+		displayName = "HK416A5 14.5 Barrel (VFG) Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_VFG2.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\VerticalGrip_low_CO.paa"};
+		model = "x\SPS\Weapons\SPS_hk416\hk416_14_5.p3d";
+		picture = "x\SPS\Weapons\SPS_hk416\ui\14VFG_black_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\14VFG_black_ca.paa";
+		maxZeroing = 1000;
+		initSpeed = -0.924;
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[] = {901};
+			mass = 81;
+		};
+		inertia = 0.43;
+		ACE_barrelTwist = 177.8;
+		ACE_barrelLength = 368.3;
+		dexterity = 1.6;
+//		dispersion = 0.000644985;
+		class ItemInfo
+		{
+			priority = 1;
+		};
+	};
+	class SPS_hk416_14_5_vfg_ral8000_f: SPS_hk416_14_5_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 14.5 Barrel (VFG) RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\VerticalGrip_low_CO.paa"};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\14VFG_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\14VFG_ral8000_ca.paa";
+	};
+	class SPS_hk416_14_5_vfg_fde_f: SPS_hk416_14_5_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 14.5 Barrel (VFG) Dark Earth";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\VerticalGrip_low_CO.paa"};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\14VFG_fde_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\14VFG_fde_ca.paa";
+	};
+	class SPS_hk416_14_5_afg_black_f: SPS_hk416_14_5_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 14.5 Barrel (AFG) Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_AFG2.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\Black\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\14AFG_black_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\14AFG_black_ca.paa";
+	};
+	class SPS_hk416_14_5_afg_ral8000_f: SPS_hk416_14_5_afg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 14.5 Barrel (AFG) RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\RAL8000\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\14AFG_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\14AFG_ral8000_ca.paa";
+	};
+	class SPS_hk416_14_5_afg_fde_f: SPS_hk416_14_5_afg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 14.5 Barrel (AFG) Dark Earth";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\RAL8000\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\14AFG_fde_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\14AFG_fde_ca.paa";
+	};
+	class SPS_hk416_16_5_vfg_black_f: SPS_hk416_base_f
+	{
+		author = "SPS Team";	
+		class Single: Single {dispersion = 0.00059;};
+		class FullAuto: FullAuto {dispersion = 0.00059;};
+		class fullauto_medium: fullauto_medium {dispersion = 0.00059;};
+		class single_medium_optics1:  single_medium_optics1 {dispersion = 0.00059;};
+		class single_medium_optics2:  single_medium_optics2 {dispersion = 0.00059;};
+		scope = 2;
+		displayName = "HK416A5 16.5 Barrel (VFG) Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_VFG2.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\VerticalGrip_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16VFG_black_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16VFG_black_ca.paa";
+		initSpeed = -0.978;
+		model = "x\SPS\Weapons\SPS_hk416\HK416_16_5.p3d";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass = 85;
+		};
+		maxZeroing = 1200;
+		inertia = 0.4745;
+		dexterity = 1.55;
+//		dispersion = 0.00059;
+		ACE_barrelTwist = 177.8;
+		ACE_barrelLength = 419.1;
+		class ItemInfo
+		{
+			priority = 1;
+		};
+		magazines[] = {"30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_green","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_Tracer_Red","30Rnd_556x45_Stanag_Tracer_Green","30Rnd_556x45_Stanag_Tracer_Yellow","SPS_60Rnd_556x45_Surefire_mag","SPS_60Rnd_556x45_Surefire_Tracer_Red_mag"};
+		class ReloadMagazineClasses
+		{
+			SPS_60Rnd_556x45_Surefire_mag = "SPS_hk416_16_5_vfg_sf_black_F";
+			SPS_60Rnd_556x45_Surefire_Tracer_Red_mag = "SPS_hk416_16_5_vfg_sf_black_F";
+		};
+	};
+	class SPS_hk416_16_5_vfg_ral8000_f: SPS_hk416_16_5_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 16.5 Barrel (VFG) RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\VerticalGrip_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16VFG_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16VFG_ral8000_ca.paa";
+		class ReloadMagazineClasses
+		{
+			SPS_60Rnd_556x45_Surefire_mag = "SPS_hk416_16_5_vfg_sf_ral8000_F";
+			SPS_60Rnd_556x45_Surefire_Tracer_Red_mag = "SPS_hk416_16_5_vfg_sf_ral8000_F";
+		};
+	};
+	class SPS_hk416_16_5_vfg_fde_f: SPS_hk416_16_5_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 16.5 Barrel (VFG) Dark Earth";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\VerticalGrip_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16VFG_fde_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16VFG_fde_ca.paa";
+		class ReloadMagazineClasses
+		{
+			SPS_60Rnd_556x45_Surefire_mag = "SPS_hk416_16_5_vfg_sf_fde_F";
+			SPS_60Rnd_556x45_Surefire_Tracer_Red_mag = "SPS_hk416_16_5_vfg_sf_fde_F";
+		};
+	};
+	class SPS_hk416_16_5_afg_black_f: SPS_hk416_16_5_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 16.5 Barrel (AFG) Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_AFG2.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\Black\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16AFG_black_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16AFG_black_ca.paa";
+		class ReloadMagazineClasses
+		{
+			SPS_60Rnd_556x45_Surefire_mag = "SPS_hk416_16_5_afg_sf_black_f";
+			SPS_60Rnd_556x45_Surefire_Tracer_Red_mag = "SPS_hk416_16_5_afg_sf_black_f";
+		};
+	};
+	class SPS_hk416_16_5_afg_ral8000_f: SPS_hk416_16_5_afg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 16.5 Barrel (AFG) RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\RAL8000\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16AFG_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16AFG_ral8000_ca.paa";
+		class ReloadMagazineClasses
+		{
+			SPS_60Rnd_556x45_Surefire_mag = "SPS_hk416_16_5_afg_sf_ral8000_f";
+			SPS_60Rnd_556x45_Surefire_Tracer_Red_mag = "SPS_hk416_16_5_afg_sf_ral8000_f";
+		};
+	};
+	class SPS_hk416_16_5_afg_fde_f: SPS_hk416_16_5_afg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 16.5 Barrel (AFG) Dark Earth";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\RAL8000\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16AFG_fde_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16AFG_fde_ca.paa";
+		class ReloadMagazineClasses
+		{
+			SPS_60Rnd_556x45_Surefire_mag = "SPS_hk416_16_5_afg_sf_fde_f";
+			SPS_60Rnd_556x45_Surefire_Tracer_Red_mag = "SPS_hk416_16_5_afg_sf_fde_f";
+		};
+	};
+	class SPS_hk416_16_5_vfg_sf_black_f: SPS_hk416_16_5_vfg_black_f
+	{
+		author = "SPS Team";
+		scopeArsenal = 1;
+		displayName = "HK416A5 16.5 Barrel (VFG) SF60 Black";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\VerticalGrip_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\MagazineSF60_low_CO.paa"};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16VFGSF_black_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16VFGSF_black_ca.paa";
+		class ReloadMagazineClasses
+		{
+			30Rnd_556x45_Stanag = "SPS_hk416_16_5_vfg_black_F";
+			30Rnd_556x45_Stanag_green = "SPS_hk416_16_5_vfg_black_F";
+			30Rnd_556x45_Stanag_red = "SPS_hk416_16_5_vfg_black_F";
+			30Rnd_556x45_Stanag_Tracer_Green = "SPS_hk416_16_5_vfg_black_F";
+			30Rnd_556x45_Stanag_Tracer_Yellow = "SPS_hk416_16_5_vfg_black_F";
+			30Rnd_556x45_Stanag_Tracer_Red = "SPS_hk416_16_5_vfg_black_F";
+		};
+	};
+	class SPS_hk416_16_5_vfg_sf_ral8000_f: SPS_hk416_16_5_vfg_black_f
+	{
+		author = "SPS Team";
+		scopeArsenal = 1;
+		displayName = "HK416A5 16.5 Barrel (VFG) SF60 RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\VerticalGrip_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\MagazineSF60_low_CO.paa"};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16VFGSF_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16VFGSF_ral8000_ca.paa";
+		class ReloadMagazineClasses
+		{
+			30Rnd_556x45_Stanag = "SPS_hk416_16_5_vfg_ral8000_F";
+			30Rnd_556x45_Stanag_green = "SPS_hk416_16_5_vfg_ral8000_F";
+			30Rnd_556x45_Stanag_red = "SPS_hk416_16_5_vfg_ral8000_F";
+			30Rnd_556x45_Stanag_Tracer_Green = "SPS_hk416_16_5_vfg_ral8000_F";
+			30Rnd_556x45_Stanag_Tracer_Yellow = "SPS_hk416_16_5_vfg_ral8000_F";
+			30Rnd_556x45_Stanag_Tracer_Red = "SPS_hk416_16_5_vfg_ral8000_F";
+		};
+	};
+	class SPS_hk416_16_5_vfg_sf_fde_f: SPS_hk416_16_5_vfg_black_f
+	{
+		author = "SPS Team";
+		scopeArsenal = 1;
+		displayName = "HK416A5 16.5 Barrel (VFG) SF60 Dark Earth";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\VerticalGrip_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\MagazineSF60_low_CO.paa"};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16VFGSF_fde_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16VFGSF_fde_ca.paa";
+		class ReloadMagazineClasses
+		{
+			30Rnd_556x45_Stanag = "SPS_hk416_16_5_vfg_fde_F";
+			30Rnd_556x45_Stanag_green = "SPS_hk416_16_5_vfg_fde_F";
+			30Rnd_556x45_Stanag_red = "SPS_hk416_16_5_vfg_fde_F";
+			30Rnd_556x45_Stanag_Tracer_Green = "SPS_hk416_16_5_vfg_fde_F";
+			30Rnd_556x45_Stanag_Tracer_Yellow = "SPS_hk416_16_5_vfg_fde_F";
+			30Rnd_556x45_Stanag_Tracer_Red = "SPS_hk416_16_5_vfg_fde_F";
+		};
+	};
+	class SPS_hk416_16_5_afg_sf_black_f: SPS_hk416_16_5_afg_black_f
+	{
+		author = "SPS Team";
+		scopeArsenal = 1;
+		displayName = "HK416A5 16.5 Barrel (AFG) SF60 Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_AFG2.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\Black\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","","x\SPS\Weapons\SPS_hk416\data\RAL8000\MagazineSF60_low_CO.paa"};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16AFGSF_black_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16AFGSF_black_ca.paa";
+		class ReloadMagazineClasses
+		{
+			30Rnd_556x45_Stanag = "SPS_hk416_16_5_afg_black_F";
+			30Rnd_556x45_Stanag_green = "SPS_hk416_16_5_afg_black_F";
+			30Rnd_556x45_Stanag_red = "SPS_hk416_16_5_afg_black_F";
+			30Rnd_556x45_Stanag_Tracer_Green = "SPS_hk416_16_5_afg_black_F";
+			30Rnd_556x45_Stanag_Tracer_Yellow = "SPS_hk416_16_5_afg_black_F";
+			30Rnd_556x45_Stanag_Tracer_Red = "SPS_hk416_16_5_afg_black_F";
+		};
+	};
+	class SPS_hk416_16_5_afg_sf_ral8000_f: SPS_hk416_16_5_afg_black_f
+	{
+		author = "SPS Team";
+		scopeArsenal = 1;
+		displayName = "HK416A5 16.5 Barrel (AFG) SF60 RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\RAL8000\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","","x\SPS\Weapons\SPS_hk416\data\RAL8000\MagazineSF60_low_CO.paa"};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16AFGSF_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16AFGSF_ral8000_ca.paa";
+		class ReloadMagazineClasses
+		{
+			30Rnd_556x45_Stanag = "SPS_hk416_16_5_afg_ral8000_F";
+			30Rnd_556x45_Stanag_green = "SPS_hk416_16_5_afg_ral8000_F";
+			30Rnd_556x45_Stanag_red = "SPS_hk416_16_5_afg_ral8000_F";
+			30Rnd_556x45_Stanag_Tracer_Green = "SPS_hk416_16_5_afg_ral8000_F";
+			30Rnd_556x45_Stanag_Tracer_Yellow = "SPS_hk416_16_5_afg_ral8000_F";
+			30Rnd_556x45_Stanag_Tracer_Red = "SPS_hk416_16_5_afg_ral8000_F";
+		};
+	};
+	class SPS_hk416_16_5_afg_sf_fde_f: SPS_hk416_16_5_afg_black_f
+	{
+		author = "SPS Team";
+		scopeArsenal = 1;
+		displayName = "HK416A5 16.5 Barrel (AFG) SF60 Dark Earth";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\RAL8000\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","","x\SPS\Weapons\SPS_hk416\data\RAL8000\MagazineSF60_low_CO.paa"};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16AFGSF_fde_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16AFGSF_fde_ca.paa";
+		class ReloadMagazineClasses
+		{
+			30Rnd_556x45_Stanag = "SPS_hk416_16_5_afg_fde_F";
+			30Rnd_556x45_Stanag_green = "SPS_hk416_16_5_afg_fde_F";
+			30Rnd_556x45_Stanag_red = "SPS_hk416_16_5_afg_fde_F";
+			30Rnd_556x45_Stanag_Tracer_Green = "SPS_hk416_16_5_afg_fde_F";
+			30Rnd_556x45_Stanag_Tracer_Yellow = "SPS_hk416_16_5_afg_fde_F";
+			30Rnd_556x45_Stanag_Tracer_Red = "SPS_hk416_16_5_afg_fde_F";
+		};
+	};
+	class SPS_hk416_20_vfg_black_f: SPS_hk416_base_f
+	{
+		author = "SPS Team";
+		class Single: Single {dispersion = 0.00045;};
+		class FullAuto: FullAuto {dispersion = 0.00045;};
+		class fullauto_medium: fullauto_medium {dispersion = 0.00045;};
+		class single_medium_optics1:  single_medium_optics1 {dispersion = 0.00045;};
+		class single_medium_optics2:  single_medium_optics2 {dispersion = 0.00045;};		
+		scope = 2;
+		displayName = "HK416A5 20 Barrel (VFG) Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_VFG2.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\VerticalGrip_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\20VFG_black_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\20VFG_black_ca.paa";
+		initSpeed = -1.011;
+		model = "x\SPS\Weapons\SPS_hk416\HK416_20.p3d";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass = 89;
+//			class CowsSlot: CowsSlot
+//			{
+//				iconPosition[] = {0.5,0.35};
+//				iconScale = 0.2;
+//			};
+		};
+		maxZeroing = 1400;
+		inertia = 0.52;
+		dexterity = 1.45;
+//		dispersion = 0.00045;
+		ACE_barrelTwist = 177.8;
+		ACE_barrelLength = 508;
+		class ItemInfo
+		{
+			priority = 1;
+		};
+	};
+	class SPS_hk416_20_vfg_ral8000_f: SPS_hk416_20_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 20 Barrel (VFG) RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\VerticalGrip_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\20VFG_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\20VFG_ral8000_ca.paa";
+	};
+	class SPS_hk416_20_vfg_fde_f: SPS_hk416_20_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 20 Barrel (VFG) Dark Earth";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\VerticalGrip_low_CO.paa",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\20VFG_fde_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\20VFG_fde_ca.paa";
+	};
+	class SPS_hk416_20_afg_black_f: SPS_hk416_20_vfg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 20 Barrel (AFG) Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_AFG2.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\Black\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\20AFG_black_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\20AFG_black_ca.paa";
+	};
+	class SPS_hk416_20_afg_ral8000_f: SPS_hk416_20_afg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 20 Barrel (AFG) RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\RAL8000\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\20AFG_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\20AFG_ral8000_ca.paa";
+	};
+	class SPS_hk416_20_afg_fde_f: SPS_hk416_20_afg_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 20 Barrel (AFG) Dark Earth";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60"};
+		hiddenSelectionsTextures[] = {"x\SPS\Weapons\SPS_hk416\data\RAL8000\AFG_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS20_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","",""};
+		picture = "x\SPS\Weapons\SPS_hk416\ui\20AFG_fde_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\20AFG_fde_ca.paa";
+	};
+	
+	
+	class SPS_hk416_11_glm_black_f: SPS_hk416_base_f
+	{
+		author = "SPS Team";
+		class Single: Single {dispersion = 0.00068;};
+		class FullAuto: FullAuto {dispersion = 0.00068;};
+		class fullauto_medium: fullauto_medium {dispersion = 0.00068;};
+		class single_medium_optics1:  single_medium_optics1 {dispersion = 0.00068;};
+		class single_medium_optics2:  single_medium_optics2 {dispersion = 0.00068;};
+		ACE_barrelLength = 279.4;
+		ACE_barrelTwist = 177.8;
+		dexterity = 1.6;
+		displayName = "HK416A5 11 Barrel GLM Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_GLM.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60",   "40mmCase", "40mmRound", "Frame", "FrontClamp416", "Moveables", "Swingplate", "T1Body", "SpuhrMount", "GLM_Barrel"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_11_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","","",      "x\SPS\Weapons\sps_hk416\Data\40mmCase_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\40mmRound_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\Frame_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\FrontClamp_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Moveables_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\Swingplate_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\T1Body_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\SpuhrMount_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Barrel_GLM_low_CO.paa" };
+		inertia = 0.45;
+		initSpeed = -0.891;
+		model = "x\SPS\Weapons\SPS_hk416\HK416_11GL.p3d";
+		picture = "x\SPS\Weapons\SPS_hk416\ui\11GLM_black_ca.paa";
+		muzzles[] = {"this","sps_glm"};
+		scope = 2;
+		maxZeroing = 800;
+		uiPicture = "x\SPS\Weapons\SPS_hk416\ui\11GLM_black_ca.paa";
+		class ItemInfo
+		{
+			priority = 1;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[] = {901};
+			mass = 93;
+		};
+	};	
+	class SPS_hk416_11_glm_ral8000_f: SPS_hk416_11_glm_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 11 Barrel GLM RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60",   "40mmCase", "40mmRound", "Frame", "FrontClamp416", "Moveables", "Swingplate", "T1Body", "SpuhrMount", "GLM_Barrel"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_11_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","","", "x\SPS\Weapons\sps_hk416\Data\40mmCase_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\40mmRound_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\Frame_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\FrontClamp_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Moveables_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\Swingplate_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\T1Body_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\SpuhrMount_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Barrel_GLM_low_CO.paa" };
+		picture = "x\SPS\Weapons\SPS_hk416\ui\11GLM_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\11GLM_ral8000_ca.paa";
+	};	
+	class SPS_hk416_11_glm_fde_f: SPS_hk416_11_glm_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 11 Barrel GLM FDE";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60",   "40mmCase", "40mmRound", "Frame", "FrontClamp416", "Moveables", "Swingplate", "T1Body", "SpuhrMount", "GLM_Barrel"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_11_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","","", "x\SPS\Weapons\sps_hk416\Data\40mmCase_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\40mmRound_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\Frame_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\FrontClamp_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Moveables_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\Swingplate_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\T1Body_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\SpuhrMount_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Barrel_GLM_low_CO.paa" };
+		picture = "x\SPS\Weapons\SPS_hk416\ui\11GLM_FDE_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\11GLM_FDE_ca.paa";
+	};		
+
+
+	class SPS_hk416_14_5_glm_black_f: SPS_hk416_base_f
+	{
+		author = "SPS Team";
+		class Single: Single {dispersion = 0.000644985;};
+		class FullAuto: FullAuto {dispersion = 0.000644985;};
+		class fullauto_medium: fullauto_medium {dispersion = 0.000644985;};
+		class single_medium_optics1:  single_medium_optics1 {dispersion = 0.000644985;};
+		class single_medium_optics2:  single_medium_optics2 {dispersion = 0.000644985;};
+		ACE_barrelTwist = 177.8;
+		ACE_barrelLength = 368.3;
+		dexterity = 1.5;
+		displayName = "HK416A5 14.5 Barrel GLM Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_GLM.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60",   "40mmCase", "40mmRound", "Frame", "FrontClamp416", "Moveables", "Swingplate", "T1Body", "SpuhrMount", "GLM_Barrel"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","","",      "x\SPS\Weapons\sps_hk416\Data\40mmCase_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\40mmRound_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\Frame_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\FrontClamp_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Moveables_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\Swingplate_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\T1Body_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\SpuhrMount_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Barrel_GLM_low_CO.paa" };
+		inertia = 0.53;
+		initSpeed = -0.924;
+		model = "x\SPS\Weapons\SPS_hk416\HK416_14_5GL.p3d";
+		picture = "x\SPS\Weapons\SPS_hk416\ui\14GLM_black_ca.paa";
+		muzzles[] = {"this","sps_glm"};
+		scope = 2;
+		maxZeroing = 1000;
+		uiPicture = "x\SPS\Weapons\SPS_hk416\ui\14GLM_black_ca.paa";
+		class ItemInfo
+		{
+			priority = 1;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[] = {901};
+			mass = 101;
+		};
+	};	
+	class SPS_hk416_14_5_glm_ral8000_f: SPS_hk416_14_5_glm_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 14.5 Barrel GLM RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60",   "40mmCase", "40mmRound", "Frame", "FrontClamp416", "Moveables", "Swingplate", "T1Body", "SpuhrMount", "GLM_Barrel"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","","", "x\SPS\Weapons\sps_hk416\Data\40mmCase_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\40mmRound_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\Frame_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\FrontClamp_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Moveables_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\Swingplate_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\T1Body_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\SpuhrMount_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Barrel_GLM_low_CO.paa" };
+		picture = "x\SPS\Weapons\SPS_hk416\ui\14GLM_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\14GLM_ral8000_ca.paa";
+	};	
+	class SPS_hk416_14_5_glm_fde_f: SPS_hk416_14_5_glm_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 14.5 Barrel GLM FDE";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60",   "40mmCase", "40mmRound", "Frame", "FrontClamp416", "Moveables", "Swingplate", "T1Body", "SpuhrMount", "GLM_Barrel"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","","", "x\SPS\Weapons\sps_hk416\Data\40mmCase_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\40mmRound_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\Frame_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\FrontClamp_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Moveables_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\Swingplate_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\T1Body_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\SpuhrMount_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Barrel_GLM_low_CO.paa" };
+		picture = "x\SPS\Weapons\SPS_hk416\ui\14GLM_FDE_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\14GLM_FDE_ca.paa";
+	};		
+
+	
+	
+	class SPS_hk416_16_5_glm_black_f: SPS_hk416_base_f
+	{
+		author = "SPS Team";
+		class Single: Single {dispersion = 0.00059;};
+		class FullAuto: FullAuto {dispersion = 0.00059;};
+		class fullauto_medium: fullauto_medium {dispersion = 0.00059;};
+		class single_medium_optics1:  single_medium_optics1 {dispersion = 0.00059;};
+		class single_medium_optics2:  single_medium_optics2 {dispersion = 0.00059;};
+		ACE_barrelTwist = 177.8;
+		ACE_barrelLength = 419.1;
+		dexterity = 1.45;
+		displayName = "HK416A5 16.5 Barrel GLM Black";
+		handAnim[] = {"OFP2_ManSkeleton","x\SPS\Weapons\SPS_hk416\data\rtm\HK416_GLM.rtm"};
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60",   "40mmCase", "40mmRound", "Frame", "FrontClamp416", "Moveables", "Swingplate", "T1Body", "SpuhrMount", "GLM_Barrel"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\Black\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\Black\Stock_low_CO.paa","","",      "x\SPS\Weapons\sps_hk416\Data\40mmCase_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\40mmRound_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\Frame_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\FrontClamp_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Moveables_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\Swingplate_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\T1Body_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Black\SpuhrMount_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Barrel_GLM_low_CO.paa" };
+		inertia = 0.5745;
+		initSpeed = -0.978;
+		model = "x\SPS\Weapons\SPS_hk416\HK416_16_5GL.p3d";
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16GLM_black_ca.paa";
+		muzzles[] = {"this","sps_glm"};
+		scope = 2;
+		maxZeroing = 1200;
+		uiPicture = "x\SPS\Weapons\SPS_hk416\ui\16GLM_black_ca.paa";
+		class ItemInfo
+		{
+			priority = 1;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass = 105;
+		};
+	};	
+	class SPS_hk416_16_5_glm_ral8000_f: SPS_hk416_16_5_glm_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 16.5 Barrel GLM RAL8000";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60",   "40mmCase", "40mmRound", "Frame", "FrontClamp416", "Moveables", "Swingplate", "T1Body", "SpuhrMount", "GLM_Barrel"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","","", "x\SPS\Weapons\sps_hk416\Data\40mmCase_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\40mmRound_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\Frame_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\FrontClamp_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Moveables_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\Swingplate_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\T1Body_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\RAL8000\SpuhrMount_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Barrel_GLM_low_CO.paa" };
+		picture = "x\SPS\Weapons\SPS_hk416\ui\14GLM_ral8000_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\14GLM_ral8000_ca.paa";
+	};	
+	class SPS_hk416_16_5_glm_fde_f: SPS_hk416_16_5_glm_black_f
+	{
+		author = "SPS Team";
+		displayName = "HK416A5 16.5 Barrel GLM FDE";
+		hiddenSelections[] = {"AFG","BarrelGroup","BoltGroup","AddonsGroup","Magazine","RIS","Receiver","Stock","VertGrip","MagazineSF60",   "40mmCase", "40mmRound", "Frame", "FrontClamp416", "Moveables", "Swingplate", "T1Body", "SpuhrMount", "GLM_Barrel"};
+		hiddenSelectionsTextures[] = {"","x\SPS\Weapons\SPS_hk416\data\RAL8000\BarrelGroup_16_5_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\BoltGroup_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Addons_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Magazine_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\RIS_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\DarkEarth\Receiver_low_CO.paa","x\SPS\Weapons\SPS_hk416\data\RAL8000\Stock_low_CO.paa","","", "x\SPS\Weapons\sps_hk416\Data\40mmCase_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\40mmRound_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\Frame_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\FrontClamp_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Moveables_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\Swingplate_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\T1Body_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\DarkEarth\SpuhrMount_low_CO.paa" , "x\SPS\Weapons\sps_hk416\Data\Barrel_GLM_low_CO.paa" };
+		picture = "x\SPS\Weapons\SPS_hk416\ui\16GLM_FDE_ca.paa";
+		UiPicture = "x\SPS\Weapons\SPS_hk416\ui\16GLM_FDE_ca.paa";
+	};	
+
+
+	
+	
+};
+class CfgMagazines
+{
+	class 30Rnd_556x45_Stanag;
+	class 30Rnd_556x45_Stanag_green;
+	class 30Rnd_556x45_Stanag_red;
+	class 30Rnd_556x45_Stanag_Tracer_Green;
+	class 30Rnd_556x45_Stanag_Tracer_Yellow;
+	class 30Rnd_556x45_Stanag_Tracer_Red;
+	class SPS_60Rnd_556x45_Surefire_mag: 30Rnd_556x45_Stanag
+	{
+		count = 60;
+		descriptionShort = "Caliber : 556.45mm NATO<br />Rounds : 60";
+		displayName = "5.56mm 60Rnd Mag";
+		displayNameShort = "5.56mm";
+		lastRoundsTracer = 5;
+		mass = 14;
+		tracersEvery = 5;
+	};
+	class SPS_60Rnd_556x45_Surefire_Tracer_Red_mag: 30Rnd_556x45_Stanag_Tracer_Red
+	{
+		count = 60;
+		descriptionShort = "Caliber : 556.45mm NATO Tracer (Red)<br />Rounds : 60";
+		displayName = "5.56mm 60Rnd Tracer Mag (Red)";
+		displayNameShort = "5.56mm Tracer Red";
+		lastRoundsTracer = 0;
+		mass = 14;
+		tracersEvery = 1;
+	};
+
+};

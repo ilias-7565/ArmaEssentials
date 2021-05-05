@@ -9,6 +9,12 @@ For the info pages see the [Wiki](https://github.com/ilias-7565/ArmaEssentials/w
 
 See also [CBA Repository](https://github.com/CBATeam/CBA_A3), for editing related info (for example configs).
 
+For Mods management, Arma3Sync will allow you to separate/sort them to groups,
+	 and load multiple of these groups. The next closest solution is a Steam Workshop's Collections ("Subscribe to all"/"Unsubscribe from all" buttons).
+See [*](Additional/ArmA3Sync) .
+
+* Arma 3 Mod Preset Launcher is less functional, and even outdated.
+
 ## Content
 
 BinToCppAll.bat = works for all files in a folder and subfolders, or the single file . used the same way as default BINToCPP.bat in CfgConvert from { Arma [_] | DayZ } Tools on Steam <sup title="(put it in `DayZ Tools\Bin\CfgConvert` folder and drag the target file/folder on it)" style="color:dodgerBlue;">__[i]__</sup> ;

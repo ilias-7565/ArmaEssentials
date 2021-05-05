@@ -1,0 +1,13 @@
+All materials, whole or partitioned, referenced in this folder,
+	 to the maximum extent as provided in applicable law --
+1. is not authorized to interact with, or
+2. is licensed under respective, further located license or licenses.
+
+3.1. Notices
+
+The folder may contain materials that: as allowed by applicable law,
+	 cannot be licensed, or relicensed in this distribution.
+
+None of licenses which is applied to parent folders is applied to content of this folder.
+
+Do not interact with content of this folder if you are not sure that you are allowed to do so.
