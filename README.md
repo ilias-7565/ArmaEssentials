@@ -19,13 +19,15 @@ Feel free to participate in improvement of the lists.
 
 ### Steam
 
-* There is no adequate/fast way to: manage groups of Mods (like copying or splitting). So we use Web Browsers for this. This repository's sorted tree, including current Mods selection, is packed into the bookmarks.html file.  
+There is no adequate/fast way to: manage groups of Mods (like copying or splitting). So we use Web Browsers for this.
 
-Exported Bookmarks .html -s can be dragged onto the default Arma 3 Launcher. But for the sake of keeping everything broken, you'll first have to Unsubscribe from all Mods.
+This repository's sorted tree, including current Mods selection, is packed into the bookmarks.html file.
 
-Because the Launcher won't put the new ones into Loaded/selection list.
+Exported Bookmarks .html -s can be dragged onto the default Arma 3 Launcher. But you'll first have to Unsubscribe from all Mods, because the Launcher won't put the new ones into Loaded/selection list.
 
-Note: Sometimes Steam won't delete some mods for some time after: Unsubscribing in it's interfaces, or using "Unsubscribe all Steam Workshop mods" in the default Arma 3 Launcher.
+Sometimes Steam won't delete some mods for some time after: Unsubscribing in it's interfaces, or using "Unsubscribe all Steam Workshop mods" in the default Arma 3 Launcher.
+
+Some browsers doesn't show all locations of bookmarks for the opened/current page, so we duplicate some sorting to the dev folder (for keeping only 1 bookmark per page). THat can badly affect searching for broken Mods.
 
 ### Arma3Sync
 
