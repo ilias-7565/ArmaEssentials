@@ -34,6 +34,9 @@ Compatibility files from/for [NATO_Rus_Weapons by Massi](https://steamcommunity.
 
 Config enhancement/fixes for CUP . (low)
 ​
+Userconfig folder is not required for our Addons/Mod (#d_modFolder),
+	 its only to support other Mods that require it, because they usually require to manually make/paste it.
+
 ## Dev
 
 Mostly done r3f_log support for Zeus Enhanced 's clipboard and scripted export/save.
