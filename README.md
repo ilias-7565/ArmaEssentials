@@ -21,13 +21,21 @@ Feel free to participate in improvement of the lists.
 !!! To avoid chance of loosing a lot of time, forget about downloading mods without adding each to at least 1 external list.
 
 Steam
+* There is no adequate/fast way to: manage groups of Mods (like copying or splitting). So we use Web Browsers for this. This repository's sorted tree, including current Mods selection, is packed into the bookmarks.html file.
+
+<details><summary>More info on Steam
+</summary>
+
 * Workshop's Collections have "Subscribe to all"/"Unsubscribe from all" buttons. Default Arma 3 Launcher has "Load all" (Subscribed and Locally included/marked) button.
-	<i><sup title="Sometimes Steam won't delete some mods for some time after Unsubscribing in it's interfaces.">[additional]</sup></i>
-* There is no adequate/fast way to manage multiple Mods within/between Collection/-s.
-* Use Favorites group for marking Mods that you download temporally.
+* Sometimes Steam won't delete some mods for some time after Unsubscribing in it's interfaces.
+* Favorites group can be used for marking Mods that is downloaded temporally.
+
+</details>
 
 Arma3Sync allow you to separate/sort downloaded Mods to groups,
 	 and load multiple of these groups. See [our pack](Additional/ArmA3Sync).
+* It requires having only newly subscribed Mods' Symbolic Links in the !Workshop folder,
+	 otherwise it requires to manually select each such Mod from a list of all.
 
 Other:
 * Arma 3 Mod Preset Launcher is less functional than Arma3Sync, and even outdated.
