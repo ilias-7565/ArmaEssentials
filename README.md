@@ -16,7 +16,11 @@ Userconfig folder is not required for our Addons/Mod (#d_modFolder),
 
 ### Mods management
 
-Steam Workshop's Collections have "Subscribe to all"/"Unsubscribe from all" buttons. Also Steam won't delete mods for some time after Unsubscribing in it.
+Steam
+* Workshop's Collections have "Subscribe to all"/"Unsubscribe from all" buttons, also Steam won't delete mods for some time after Unsubscribing in it's interfaces. (default Arma 3 Launcher has "Load all" (Subscribed and Locally included/marked) function.
+* Use Favorites group for marking Mods that you download temporally.
+
+!!! To avoid chance of loosing a lot of time, Forget about downloading mods without adding each to at least 1 external list.
 
 Arma3Sync will allow you to separate/sort downloaded Mods to groups,
 	 and load multiple of these groups. See [*](Additional/ArmA3Sync) .
