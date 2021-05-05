@@ -21,13 +21,11 @@ Feel free to participate in improvement of the lists.
 
 * There is no adequate/fast way to: manage groups of Mods (like copying or splitting). So we use Web Browsers for this. This repository's sorted tree, including current Mods selection, is packed into the bookmarks.html file.  
 
-Exported Bookmarks .html -s can be dragged onto the default Arma 3 Launcher. But for the sake of keeping everything broken, you'll first have to:
-* move all Symbolic Links to Mods: from !Workshop folder; or
-* Unsubscribe from them.
+Exported Bookmarks .html -s can be dragged onto the default Arma 3 Launcher. But for the sake of keeping everything broken, you'll first have to Unsubscribe from all Mods.
 
 Because the Launcher won't put the new ones into Loaded/selection list.
 
-Note: Sometimes Steam won't delete some mods for some time after Unsubscribing in it's interfaces.
+Note: Sometimes Steam won't delete some mods for some time after: Unsubscribing in it's interfaces, or using "Unsubscribe all Steam Workshop mods" in the default Arma 3 Launcher.
 
 ### Arma3Sync
 
@@ -38,7 +36,8 @@ Allows you to separate/sort downloaded Mods to locally stored link trees,
 	 otherwise it requires to manually select each such Mod from a list of all.
 * It doesn't provide any info or links for the Mods. And has horrible list/tree controls.
 
-Other:
+### Other
+
 * Arma 3 Mod Preset Launcher is less functional than Arma3Sync, and even outdated.
 
 # Content
@@ -57,7 +56,7 @@ Compatibility files from/for [NATO_Rus_Weapons by Massi](https://steamcommunity.
 ## Additional
 
 Config enhancement/fixes for CUP . (low)
-​
+
 # Dev
 
 Mostly done r3f_log support for Zeus Enhanced 's clipboard and scripted export/save.
