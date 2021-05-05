@@ -22,7 +22,7 @@ Feel free to participate in improvement of the lists.
 
 Steam
 * There is no adequate/fast way to: manage groups of Mods (like copying or splitting). So we use Web Browsers for this. This repository's sorted tree, including current Mods selection, is packed into the bookmarks.html file.  
-	 Then, for a sake of having something done adequate, you can simply drag such .html into default Arma 3 Launcher.
+	 Then the .html can be dragged onto the default Arma 3 Launcher. But for the sake of keeping everything broken, you'll first have to unsubscribe from all mods, because the Launcher won't put the new ones into Loaded/selection list.
 
 <details><summary>More info on Steam
 </summary>
