@@ -7,23 +7,27 @@ Keep in mind that the presets/samples are intended to let you know about the mos
 
 ## Information
 
-For the info pages see the [Wiki](https://github.com/ilias-7565/ArmaEssentials/wiki/) part.
-
+For info pages see the [Wiki](https://github.com/ilias-7565/ArmaEssentials/wiki/) part.  
 See also [CBA Repository](https://github.com/CBATeam/CBA_A3), for more of editing related info (for example configs).
 
 Userconfig folder is not required for our Addons/Mod (#d_modFolder),
 	 its only to support other Mods that require it, because they usually require to manually make/paste it.
 
+See also our Steam Workshop's Mods management [Collections](https://steamcommunity.com/sharedfiles/filedetails/?id=2120634028).  
+Feel free to participate in improvement of the lists.
+
 ### Mods management
 
+!!! To avoid chance of loosing a lot of time, forget about downloading mods without adding each to at least 1 external list.
+
 Steam
-* Workshop's Collections have "Subscribe to all"/"Unsubscribe from all" buttons, also Steam won't delete mods for some time after Unsubscribing in it's interfaces. (default Arma 3 Launcher has "Load all" (Subscribed and Locally included/marked) function.
+* Workshop's Collections have "Subscribe to all"/"Unsubscribe from all" buttons. Default Arma 3 Launcher has "Load all" (Subscribed and Locally included/marked) button.
+	<i><sup title="Sometimes Steam won't delete some mods for some time after Unsubscribing in it's interfaces.">[additional]</sup></i>
+* There is no adequate/fast way to manage multiple Mods within/between Collection/-s.
 * Use Favorites group for marking Mods that you download temporally.
 
-!!! To avoid chance of loosing a lot of time, Forget about downloading mods without adding each to at least 1 external list.
-
-Arma3Sync will allow you to separate/sort downloaded Mods to groups,
-	 and load multiple of these groups. See [*](Additional/ArmA3Sync) .
+Arma3Sync allow you to separate/sort downloaded Mods to groups,
+	 and load multiple of these groups. See [our pack](Additional/ArmA3Sync).
 
 Other:
 * Arma 3 Mod Preset Launcher is less functional than Arma3Sync, and even outdated.
