@@ -21,6 +21,8 @@ See also [Mods management](assets//info_cont_Mods.md).
 Arma 3 Samples from Steam -- using and fixing, which belong to Bohemia Interactive . A lot of them are not re-sorted and doesn't have descriptions, but all should work.
 
 [EDN Fortification](https://steamcommunity.com/sharedfiles/filedetails/?id=933801347&searchtext=fortif), lightly updated. [Originally](https://www.armaholic.com/page.php?id=26964) made by Eden of Sol-diers .
+* Added CBA Keybinding support .
+* Changed Item Type of the materials to Misc (CBA) .
 
 ## Additional
 

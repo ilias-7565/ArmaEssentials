@@ -9,16 +9,16 @@ class CfgMods {
 		//dir = "Curator";		//maybe a storage directory in Arma 3 directory folder
 		logo = "\assets_en\co_dw_256x256.paa";
 		logoOver = "\assets_en\co_dw_256x256.paa";
-		tooltipOwned = "$dev_r_en";
-		author = "@dev_r_en";
+		hidePicture = 1;
+		author = "ilias";
 		action = "https://github.com/ilias-7565/ArmaEssentials";
-		name = "@str_na_en $dev_r_en";
+		tooltipOwned = "github.com/ilias-7565/ArmaEssentials";
+		name = "ArmaEssentials";
 		hideName = 1;
 		picture = "\assets_en\co_dw_256x256.paa";
-		hidePicture = 0;
 		fieldManualTopicAndHint[] = {};		//"Curator","Curator"
 		dlcColor[] = {0.31,0.78,0.78,1};
-		overview = "$desc_en";
+		overview = "See the link";
 		//appId = 275700;		//[d]
 	};
 	// ### Arma 2 OA

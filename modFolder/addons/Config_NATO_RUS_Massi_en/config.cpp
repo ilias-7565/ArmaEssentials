@@ -43,7 +43,7 @@ class cfgPatches {
 				// ,"CUP_AirVehicles_LoadOrder"
 				// ,"CUP_TrackedVehicles_LoadOrder"
 				// ,"CUP_WheeledVehicles_LoadOrder"
-			// ,"mas_weapons"
+			,"mas_weapons"
 		};
 		units[] = {};
 		weapons[] = {
@@ -81,12 +81,27 @@ class CfgWeapons {
 
 	class Rifle;
 		class Rifle_Base_F: Rifle {
+			// scope = 0;
+			// discreteDistance[] = {100, 200, 300, 400, 500, 600};
+			// discreteDistanceInitIndex = 1;
+			// weaponInfoType = "RscWeaponZeroing";
+			// recoil = "recoil_default";
+			// deployedPivot = "bipod";
+			// class GunParticles
+			// {
+			// 	class FirstEffect
+			// 	{
+			// 		effectName = "RifleAssaultCloud";
+			// 		positionName = "Usti hlavne";
+			// 		directionName = "Konec hlavne";
+			// 	};
+			// };
 			class WeaponSlotsInfo;
 		};
 		// class MainWeapon_en: Rifle_Base_F {
-		// 	scope 0;
+		// 	scope=0;
 		// 	class WeaponSlotsInfo: WeaponSlotsInfo {
-		// 		scope 0;
+		// 		scope=0;
 		// 	};
 		// };
 		// class UGL_F;
@@ -130,6 +145,7 @@ class CfgWeapons {
 		author="massi & authors in credits";
 		_generalMacro="srifle_mas_m107";
 		DLC="NATO_Rus_Weapons";
+		scope=1;
 		scopeArsenal=2;
 		baseWeapon="srifle_mas_m107";
 		displayname="M107/M82 12.7 $str_yes_en @str_yes_en";
