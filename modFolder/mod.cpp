@@ -1,4 +1,5 @@
 //config.cpp
+
 #define true 1
 #define false 0
 
@@ -10,15 +11,15 @@ class CfgMods {
 		logo = "\assets_en\co_dw_256x256.paa";
 		logoOver = "\assets_en\co_dw_256x256.paa";
 		hidePicture = 1;
-		author = "ilias";
+		name = "ArmaEssentials";
 		action = "https://github.com/ilias-7565/ArmaEssentials";
 		tooltipOwned = "github.com/ilias-7565/ArmaEssentials";
-		name = "ArmaEssentials";
+		overview = "See the link";
+		author = "ilias";
 		hideName = 1;
 		picture = "\assets_en\co_dw_256x256.paa";
 		fieldManualTopicAndHint[] = {};		//"Curator","Curator"
 		dlcColor[] = {0.31,0.78,0.78,1};
-		overview = "See the link";
 		//appId = 275700;		//[d]
 	};
 	// ### Arma 2 OA

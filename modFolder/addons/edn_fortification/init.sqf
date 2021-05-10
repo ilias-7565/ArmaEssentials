@@ -100,7 +100,7 @@ edn_fortification_keydown = 1;
 // 	]
 // ];
 
-// removeMissionEventHandler _thisEventHandler;
+// 	removeMissionEventHandler _thisEventHandler;
 // }];
 
 // waitUntil {!(IsNull (findDisplay 46))};

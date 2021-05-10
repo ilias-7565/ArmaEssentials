@@ -1,3 +1,0 @@
-
-if (isDedicated) exitWith {};
-
